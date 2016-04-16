@@ -15,7 +15,9 @@ namespace HackIt
         private void okButton_Click(object sender, System.EventArgs e)
         {
             MissionPack = MissionPack.Load(Application.StartupPath + "\\MissionPacks\\" + missionNameTextBox.Text + ".mp");
+            MissionPack.Name = missionNameTextBox.Text;
 
+            ServiceLocator.Add("filename", Application.StartupPath + "\\MissionPacks\\" + missionNameTextBox.Text + ".mp");
             DialogResult = DialogResult.OK;
         }
     }

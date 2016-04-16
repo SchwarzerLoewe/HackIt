@@ -28,6 +28,11 @@ namespace MissionBuilder.Pages
             if (currentMission.UsableTools != null)
             {
                 toolsListBox.Items.AddRange(currentMission.UsableTools);
+
+                foreach (var tool in currentMission.UsableTools)
+                {
+                    toolsComboBox.Items.Remove(tool);
+                }
             }
         }
 
@@ -46,12 +51,16 @@ namespace MissionBuilder.Pages
 
         private void addToolBtn_Click(object sender, EventArgs e)
         {
-            toolsListBox.Items.Add(toolsComboBox.SelectedText);
+            toolsListBox.Items.Add(toolsComboBox.SelectedItem.ToString());
             currentMission.UsableTools = toolsListBox.Items.ToArray();
+
+            toolsComboBox.Items.RemoveAt(toolsComboBox.SelectedIndex);
         }
 
         private void removeToolBtn_Click(object sender, EventArgs e)
         {
+            toolsComboBox.Items.Add(toolsListBox.SelectedItem.ToString());
+
             toolsListBox.Items.RemoveAt(toolsListBox.SelectedIndex);
             currentMission.UsableTools = toolsListBox.Items.ToArray();
         }
