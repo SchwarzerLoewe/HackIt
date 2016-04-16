@@ -11,6 +11,7 @@ namespace HackIt.Core.Models
         public MissionDifficulty Difficulty { get; set; }
         public int AvalablePoints { get; set; }
         public FileSystem Filesystem { get; set; }
+        public bool ToolsAsDialog { get; set; }
 
         public static Mission Create(string title, int maxPoints, string[] tools, MissionDifficulty difficulty, Computer host = null, string[] messages = null)
         {
@@ -27,7 +28,7 @@ namespace HackIt.Core.Models
             if (host == null)
             {
                 ms.Host = new Computer();
-                ms.Host.IP = IPAddressGenerator.Generate((int)ms.Difficulty + (int)DateTime.Now.Ticks);
+                ms.Host.IP = Utils.GenerateIP((int)ms.Difficulty + (int)DateTime.Now.Ticks);
                 ms.Host.FileSystem = new FileSystem();
                 ms.Host.Name = "Localhost";
             }

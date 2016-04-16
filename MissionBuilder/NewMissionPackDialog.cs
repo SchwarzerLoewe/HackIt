@@ -14,7 +14,7 @@ namespace HackIt
 
         private void okButton_Click(object sender, System.EventArgs e)
         {
-            MissionPack = MissionPack.Load(Application.StartupPath + "\\MissionPacks\\" + missionNameTextBox.Text);
+            MissionPack = MissionPack.Load(Application.StartupPath + "\\MissionPacks\\" + missionNameTextBox.Text + ".mp");
 
             DialogResult = DialogResult.OK;
         }

@@ -21,14 +21,20 @@ namespace HackIt
                 mpComboBox.Items.Add(item);
             }
 
-            mpComboBox.SelectedIndex = 0;
+            if (mpComboBox.Items.Count > 0)
+            {
+                mpComboBox.SelectedIndex = 0;
+            }
         }
 
         private void mpComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            var item = (mpComboBox.SelectedItem as ComboboxItem);
-            ServiceLocator.Add("MissionPack", item.Value);
-            ServiceLocator.Add("filename", item.Filename);
+            if (mpComboBox.SelectedItem != null)
+            {
+                var item = (mpComboBox.SelectedItem as ComboboxItem);
+                ServiceLocator.Add("MissionPack", item.Value);
+                ServiceLocator.Add("filename", item.Filename);
+            }
         }
 
         private void newMissionPackButton_Click(object sender, System.EventArgs e)

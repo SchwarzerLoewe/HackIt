@@ -19,7 +19,10 @@ namespace MissionBuilder
                 mpComboBox.Items.Add(item);
             }
 
-            mpComboBox.SelectedIndex = 0;
+            if (mpComboBox.Items.Count > 0)
+            {
+                mpComboBox.SelectedIndex = 0;
+            }
         }
 
         public Mission Mission { get; internal set; }

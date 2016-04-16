@@ -18,8 +18,11 @@ namespace MissionBuilder
             NavigationService.Container = pageContainer;
             mp = ServiceLocator.Get<MissionPack>("MissionPack");
 
-            missionAuswählenToolStripMenuItem_Click(null, EventArgs.Empty);
-            NavigationService.Navigate(new GeneralPage());
+            if (mp.Count > 0)
+            {
+                missionAuswählenToolStripMenuItem_Click(null, EventArgs.Empty);
+                NavigationService.Navigate(new GeneralPage());
+            }
         }
 
         private void beendenToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -41,7 +44,10 @@ namespace MissionBuilder
         private void neueMissionToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             currentMission = new Mission();
+            ServiceLocator.Add("CurrentMission", currentMission);
             mp.Add(currentMission);
+
+            NavigationService.Navigate(new GeneralPage());
         }
 
         private void speichernToolStripMenuItem_Click(object sender, System.EventArgs e)

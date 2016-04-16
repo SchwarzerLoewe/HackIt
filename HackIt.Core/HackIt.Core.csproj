@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adorner.cs" />
-    <Compile Include="IPAddressGenerator.cs" />
     <Compile Include="Models\MissionPack.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\FileSystem.cs" />
@@ -71,6 +70,7 @@
     <Compile Include="TitleButton.Designer.cs">
       <DependentUpon>TitleButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Shell\ShellControl.resx">
