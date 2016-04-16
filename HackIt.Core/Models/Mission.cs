@@ -7,7 +7,7 @@ namespace HackIt.Core.Models
         public string Title { get; set; }
         public string[] UsableTools { get; set; }
         public Computer Host { get; set; }
-        public string[] Messages { get; set; }
+        public Message[] Messages { get; set; }
         public MissionDifficulty Difficulty { get; set; }
         public int AvalablePoints { get; set; }
         public FileSystem Filesystem { get; set; }
@@ -34,7 +34,7 @@ namespace HackIt.Core.Models
             }
             if(messages == null)
             {
-                ms.Messages = new string[0];
+                ms.Messages = new Message[0];
             }
 
             return ms;

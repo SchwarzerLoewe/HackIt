@@ -100,7 +100,9 @@
             this.toolsComboBox.FormattingEnabled = true;
             this.toolsComboBox.Items.AddRange(new object[] {
             "PasswortCracker",
-            "VirusUploader"});
+            "VirusUploader",
+            "Downloader",
+            "Deleter"});
             this.toolsComboBox.Location = new System.Drawing.Point(243, 127);
             this.toolsComboBox.Name = "toolsComboBox";
             this.toolsComboBox.Size = new System.Drawing.Size(121, 21);

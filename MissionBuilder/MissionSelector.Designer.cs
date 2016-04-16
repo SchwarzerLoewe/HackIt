@@ -65,17 +65,17 @@
             this.mpComboBox.TabIndex = 2;
             this.mpComboBox.SelectedIndexChanged += new System.EventHandler(this.mpComboBox_SelectedIndexChanged);
             // 
-            // MissionPackSelector
+            // MissionSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(284, 75);
             this.Controls.Add(this.mpComboBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "MissionPackSelector";
+            this.Name = "MissionSelector";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

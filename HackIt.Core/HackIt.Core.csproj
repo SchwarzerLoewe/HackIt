@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adorner.cs" />
+    <Compile Include="Models\Credential.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\MissionPack.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\FileSystem.cs" />
@@ -64,6 +66,48 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Shell\ShellWriter.cs" />
+    <Compile Include="Templating\ArgumentCollection.cs" />
+    <Compile Include="Templating\CompoundGenerator.cs" />
+    <Compile Include="Templating\ConditionTagDefinition.cs" />
+    <Compile Include="Templating\ContentTagDefinition.cs" />
+    <Compile Include="Templating\Context.cs" />
+    <Compile Include="Templating\ContextParameter.cs" />
+    <Compile Include="Templating\EachTagDefinition.cs" />
+    <Compile Include="Templating\ElifTagDefinition.cs" />
+    <Compile Include="Templating\ElseTagDefinition.cs" />
+    <Compile Include="Templating\FormatCompiler.cs" />
+    <Compile Include="Templating\Generator.cs" />
+    <Compile Include="Templating\HtmlFormatCompiler.cs" />
+    <Compile Include="Templating\IArgument.cs" />
+    <Compile Include="Templating\IfTagDefinition.cs" />
+    <Compile Include="Templating\IGenerator.cs" />
+    <Compile Include="Templating\IndexTagDefinition.cs" />
+    <Compile Include="Templating\InlineGenerator.cs" />
+    <Compile Include="Templating\InlineTagDefinition.cs" />
+    <Compile Include="Templating\KeyFoundEventArgs.cs" />
+    <Compile Include="Templating\KeyGenerator.cs" />
+    <Compile Include="Templating\KeyNotFoundEventArgs.cs" />
+    <Compile Include="Templating\MasterTagDefinition.cs" />
+    <Compile Include="Templating\NestedContext.cs" />
+    <Compile Include="Templating\NewlineTagDefinition.cs" />
+    <Compile Include="Templating\NumberArgument.cs" />
+    <Compile Include="Templating\PlaceholderArgument.cs" />
+    <Compile Include="Templating\PlaceholderFoundEventArgs.cs" />
+    <Compile Include="Templating\PropertyDictionary.cs" />
+    <Compile Include="Templating\RegexHelper.cs" />
+    <Compile Include="Templating\Scope.cs" />
+    <Compile Include="Templating\SetTagDefinition.cs" />
+    <Compile Include="Templating\StaticGenerator.cs" />
+    <Compile Include="Templating\StringArgument.cs" />
+    <Compile Include="Templating\Substitution.cs" />
+    <Compile Include="Templating\TagDefinition.cs" />
+    <Compile Include="Templating\TagFormattedEventArgs.cs" />
+    <Compile Include="Templating\TagParameter.cs" />
+    <Compile Include="Templating\UpcastDictionary.cs" />
+    <Compile Include="Templating\ValueRequestEventArgs.cs" />
+    <Compile Include="Templating\VariableArgument.cs" />
+    <Compile Include="Templating\VariableFoundEventArgs.cs" />
+    <Compile Include="Templating\WithTagDefinition.cs" />
     <Compile Include="TitleButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
