@@ -8,27 +8,22 @@ namespace HackIt.Core.Models
         public string[] UsableTools { get; set; }
         public Computer Host { get; set; }
         public Message[] Messages { get; set; }
-        public MissionDifficulty Difficulty { get; set; }
         public int AvalablePoints { get; set; }
         public FileSystem Filesystem { get; set; }
         public bool ToolsAsDialog { get; set; }
 
-        public static Mission Create(string title, int maxPoints, string[] tools, MissionDifficulty difficulty, Computer host = null, string[] messages = null)
+        public static Mission Create(string title, int maxPoints, string[] tools, Computer host = null, string[] messages = null)
         {
             var ms = new Mission();
 
             ms.Title = title;
             ms.UsableTools = tools;
-            ms.Difficulty = difficulty;
             ms.AvalablePoints = maxPoints;
-
-            if (difficulty == MissionDifficulty.Hard) ms.AvalablePoints /= 2;
-            if (difficulty == MissionDifficulty.Easy) ms.AvalablePoints *= 2;
 
             if (host == null)
             {
                 ms.Host = new Computer();
-                ms.Host.IP = Utils.GenerateIP((int)ms.Difficulty + (int)DateTime.Now.Ticks);
+                ms.Host.IP = Utils.GenerateIP((int)DateTime.Now.Ticks);
                 ms.Host.FileSystem = new FileSystem();
                 ms.Host.Name = "Localhost";
             }
@@ -39,13 +34,5 @@ namespace HackIt.Core.Models
 
             return ms;
         }
-    }
-
-    public enum MissionDifficulty
-    {
-        Easy,
-        Medium,
-        Difficult,
-        Hard
     }
 }

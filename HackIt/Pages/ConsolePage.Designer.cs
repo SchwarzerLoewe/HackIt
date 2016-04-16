@@ -38,7 +38,7 @@
             this.shellControl1.Name = "shellControl1";
             this.shellControl1.Prompt = "> ";
             this.shellControl1.ShellTextBackColor = System.Drawing.Color.Black;
-            this.shellControl1.ShellTextFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shellControl1.ShellTextFont = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shellControl1.ShellTextForeColor = System.Drawing.Color.LimeGreen;
             this.shellControl1.Size = new System.Drawing.Size(621, 291);
             this.shellControl1.TabIndex = 0;

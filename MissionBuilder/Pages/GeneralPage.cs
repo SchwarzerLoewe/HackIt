@@ -19,7 +19,6 @@ namespace MissionBuilder.Pages
 
             InitializeComponent();
 
-            dificultyComboBox.DataSource = Enum.GetValues(typeof(MissionDifficulty));
             nameTextBox.Text = currentMission.Title;
             toolAsDialogCheckBox.Checked = currentMission.ToolsAsDialog;
 
@@ -39,14 +38,6 @@ namespace MissionBuilder.Pages
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
             currentMission.Title = nameTextBox.Text;
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (currentMission != null)
-            {
-                currentMission.Difficulty = (MissionDifficulty)dificultyComboBox.SelectedItem;
-            }
         }
 
         private void addToolBtn_Click(object sender, EventArgs e)

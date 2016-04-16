@@ -1,5 +1,6 @@
 ﻿using HackIt.Core;
 using HackIt.Pages;
+using System;
 using System.Windows.Forms;
 
 namespace HackIt
@@ -22,6 +23,8 @@ namespace HackIt
         private void consoleLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             NavigationService.Navigate(new ConsolePage());
+            var finder = new IPFinder(new Core.Models.Computer() { IP = Utils.GenerateIP((int)DateTime.Now.Ticks) }, ipLabel);
+            finder.StartFinding();
         }
 
         private void networkLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

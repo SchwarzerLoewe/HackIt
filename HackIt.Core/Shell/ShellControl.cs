@@ -7,12 +7,19 @@ namespace UILibrary
 	[DefaultEvent("CommandEntered")]
 	public class ShellControl : System.Windows.Forms.UserControl
 	{
-		private UILibrary.ShellTextBox shellTextBox;
+		private ShellTextBox shellTextBox;
 		public event EventCommandEntered CommandEntered;
 		/// <summary> 
 		/// Required designer variable.
 		/// </summary>
-		private System.ComponentModel.Container components = null;
+		private Container components = null;
+
+		public new Font Font
+		{
+			get { return shellTextBox.Font; }
+			set { shellTextBox.Font = value; }
+		}
+
 
 		public ShellControl()
 		{
