@@ -1,4 +1,6 @@
 ﻿using HackIt.Core;
+using System.Drawing;
+using System.Windows.Forms;
 using UILibrary;
 
 namespace HackIt.Tools.Commands
@@ -28,6 +30,18 @@ namespace HackIt.Tools.Commands
                     break;
                 case "cls":
                     Shell.Clear();
+
+                    break;
+                case "shutdown":
+                    Application.Exit();
+
+                    break;
+                case "color":
+                    var back = (Color)new ColorConverter().ConvertFromString(cmd.Args[0]);
+                    var fore = (Color)new ColorConverter().ConvertFromString(cmd.Args[1]);
+
+                    Shell.BackColor = back;
+                    Shell.ForeColor = fore;
 
                     break;
             }
