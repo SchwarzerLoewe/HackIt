@@ -90,7 +90,6 @@
             // 
             // statusbarContainer
             // 
-            this.statusbarContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.statusbarContainer.Controls.Add(this.yourIPLabel);
             this.statusbarContainer.Controls.Add(this.ipLabel);
             this.statusbarContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
