@@ -142,6 +142,7 @@
   <ItemGroup>
     <Content Include="1459813469_Unlock.ico" />
     <Content Include="FodyWeavers.xml" />
+    <None Include="Resources\1460914717_Unlock.png" />
     <None Include="Resources\1459814733_f-server_128.png" />
     <None Include="Resources\1459814729_computer.png" />
   </ItemGroup>

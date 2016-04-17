@@ -38,12 +38,14 @@
             this.statusbarContainer = new System.Windows.Forms.Panel();
             this.yourIPLabel = new System.Windows.Forms.Label();
             this.ipLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleBar = new System.Windows.Forms.Panel();
+            this.formTitleLabel = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuContainer.SuspendLayout();
             this.statusbarContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.titleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuContainer
@@ -115,29 +117,30 @@
             this.ipLabel.TabIndex = 0;
             this.ipLabel.Text = "Suche nach IP:  {0}";
             // 
-            // panel1
+            // titleBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.closeBtn);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(891, 38);
-            this.panel1.TabIndex = 3;
+            this.titleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.titleBar.Controls.Add(this.pictureBox1);
+            this.titleBar.Controls.Add(this.closeBtn);
+            this.titleBar.Controls.Add(this.formTitleLabel);
+            this.titleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titleBar.Location = new System.Drawing.Point(0, 0);
+            this.titleBar.Name = "titleBar";
+            this.titleBar.Size = new System.Drawing.Size(891, 38);
+            this.titleBar.TabIndex = 3;
             // 
-            // label1
+            // formTitleLabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.formTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(416, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HackIt";
+            this.formTitleLabel.AutoSize = true;
+            this.formTitleLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formTitleLabel.ForeColor = System.Drawing.Color.Black;
+            this.formTitleLabel.Location = new System.Drawing.Point(416, 9);
+            this.formTitleLabel.Name = "formTitleLabel";
+            this.formTitleLabel.Size = new System.Drawing.Size(63, 19);
+            this.formTitleLabel.TabIndex = 0;
+            this.formTitleLabel.Text = "HackIt";
             // 
             // closeBtn
             // 
@@ -156,6 +159,18 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = global::HackIt.Properties.Resources._1460914717_Unlock;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +180,7 @@
             this.Controls.Add(this.pageContainer);
             this.Controls.Add(this.statusbarContainer);
             this.Controls.Add(this.menuContainer);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.titleBar);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -175,8 +190,9 @@
             this.menuContainer.ResumeLayout(false);
             this.statusbarContainer.ResumeLayout(false);
             this.statusbarContainer.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.titleBar.ResumeLayout(false);
+            this.titleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,9 +207,10 @@
         private System.Windows.Forms.Button messagesButton;
         private System.Windows.Forms.Label yourIPLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel titleBar;
+        private System.Windows.Forms.Label formTitleLabel;
         private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

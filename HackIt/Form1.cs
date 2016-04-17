@@ -12,6 +12,9 @@ namespace HackIt
 
             NavigationService.Container = pageContainer;
 
+            var drag = DragableBehavior.Create(titleBar, this);
+            drag.EnableDrag();
+
             Adorner.AddBadgeTo(messagesButton, "10");
             var badge = Adorner.GetBadge(messagesButton);
             badge.ForeColor = System.Drawing.Color.LawnGreen;

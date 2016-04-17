@@ -30,7 +30,7 @@
         {
             this.titlePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.titlePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.titlePanel.Controls.Add(this.label1);
-            this.titlePanel.Controls.Add(this.button1);
+            this.titlePanel.Controls.Add(this.closeBtn);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanel.Location = new System.Drawing.Point(0, 0);
             this.titlePanel.Name = "titlePanel";
@@ -58,20 +58,21 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Dialog";
             // 
-            // button1
+            // closeBtn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(247, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 22);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.closeBtn.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.ForeColor = System.Drawing.Color.Black;
+            this.closeBtn.Location = new System.Drawing.Point(247, 6);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(31, 22);
+            this.closeBtn.TabIndex = 1;
+            this.closeBtn.Text = "X";
+            this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // DialogForm
             // 
@@ -96,6 +97,6 @@
 
         private System.Windows.Forms.Panel titlePanel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button closeBtn;
     }
 }
