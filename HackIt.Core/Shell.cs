@@ -31,14 +31,9 @@ namespace HackIt.Core
             _shell = shell;
         }
 
-        public static void Write(object obj)
-        {
-            _shell.WriteText(obj.ToString());
-        }
-
         public static void WriteLine(object obj)
         {
-            _shell.WriteText(obj.ToString() + "\r");
+            _shell.WriteText(obj.ToString());
         }
 
         public static Task<string> ReadLineAsync()

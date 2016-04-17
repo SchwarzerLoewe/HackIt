@@ -28,7 +28,7 @@ namespace HackIt.Tools.Commands
 
                     break;
                 case "write":
-                    Shell.WriteLine("Please give me a text");
+                    Shell.WriteLine("Please give me a text: ");
 
                     var l = await Shell.ReadLineAsync();
                     Shell.WriteLine(l);

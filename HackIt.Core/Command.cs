@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace HackIt.Core
 {
@@ -15,7 +16,7 @@ namespace HackIt.Core
             var parsed = src.Split('"')
                      .Select((element, index) => index % 2 == 0  // If even index
                                            ? element.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)  // Split the item
-                                           : new string[] { element })  // Keep the entire item
+                                           : new string[] { Regex.Unescape(element) })  // Keep the entire item
                      .SelectMany(element => element).ToList();
 
             cmd.Name = parsed[0];

@@ -39,9 +39,9 @@
             this.yourIPLabel = new System.Windows.Forms.Label();
             this.ipLabel = new System.Windows.Forms.Label();
             this.titleBar = new System.Windows.Forms.Panel();
-            this.formTitleLabel = new System.Windows.Forms.Label();
-            this.closeBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.formTitleLabel = new System.Windows.Forms.Label();
             this.menuContainer.SuspendLayout();
             this.statusbarContainer.SuspendLayout();
             this.titleBar.SuspendLayout();
@@ -129,18 +129,17 @@
             this.titleBar.Size = new System.Drawing.Size(891, 38);
             this.titleBar.TabIndex = 3;
             // 
-            // formTitleLabel
+            // pictureBox1
             // 
-            this.formTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.formTitleLabel.AutoSize = true;
-            this.formTitleLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.formTitleLabel.ForeColor = System.Drawing.Color.Black;
-            this.formTitleLabel.Location = new System.Drawing.Point(416, 9);
-            this.formTitleLabel.Name = "formTitleLabel";
-            this.formTitleLabel.Size = new System.Drawing.Size(63, 19);
-            this.formTitleLabel.TabIndex = 0;
-            this.formTitleLabel.Text = "HackIt";
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = global::HackIt.Properties.Resources._1460914717_Unlock;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // closeBtn
             // 
@@ -159,17 +158,18 @@
             this.closeBtn.UseVisualStyleBackColor = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // pictureBox1
+            // formTitleLabel
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.Image = global::HackIt.Properties.Resources._1460914717_Unlock;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.formTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.formTitleLabel.AutoSize = true;
+            this.formTitleLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formTitleLabel.ForeColor = System.Drawing.Color.Black;
+            this.formTitleLabel.Location = new System.Drawing.Point(416, 9);
+            this.formTitleLabel.Name = "formTitleLabel";
+            this.formTitleLabel.Size = new System.Drawing.Size(63, 19);
+            this.formTitleLabel.TabIndex = 0;
+            this.formTitleLabel.Text = "HackIt";
             // 
             // Form1
             // 
