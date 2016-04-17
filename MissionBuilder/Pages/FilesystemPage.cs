@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using HackIt.Core;
 
 namespace MissionBuilder.Pages
 {
-    public partial class FilesystemPage : UserControl
+    public partial class FilesystemPage : UserControl, INavigatable
     {
         public FilesystemPage()
         {
             InitializeComponent();
+        }
+
+        public string Title => "Filesystem";
+
+        public void OnNavigate()
+        {
+            
         }
     }
 }

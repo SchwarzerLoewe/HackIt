@@ -32,6 +32,7 @@ namespace HackIt.Core
                 if (nav != null)
                 {
                     var l = new LinkLabel();
+                    
                     l.Tag = cntrl;
                     l.Text = nav.Title;
                     l.Margin = new Padding(5);

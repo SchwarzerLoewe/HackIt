@@ -96,6 +96,7 @@ namespace UILibrary
         // prevents the e.Handled = true from having the desired effect in KeyDown
         private void shellTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             // Handle backspace
             if (e.KeyChar == (char)8 && IsCaretJustBeforePrompt())
             {
@@ -231,17 +232,14 @@ namespace UILibrary
             AddText(text);
         }
 
-
         private bool IsTerminatorKey(Keys key) => key == Keys.Enter;
 
         private bool IsTerminatorKey(char keyChar) => ((int)keyChar) == 13;
 
-        // Substitute for buggy AppendText()
         private void AddText(string text)
         {
             Text += text;
             MoveCaretToEndOfText();
         }
-
     }
 }

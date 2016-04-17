@@ -8,7 +8,7 @@ namespace HackIt.Tools.Commands
     {
         public string Name => "*";
 
-        public void HandleConsole(ShellControl shell, Command cmd)
+        public async void HandleConsole(ShellControl shell, Command cmd)
         {
             switch (cmd.Name)
             {
@@ -25,6 +25,13 @@ namespace HackIt.Tools.Commands
                     break;
                 case "echo":
                     Shell.WriteLine(cmd.Args[0]);
+
+                    break;
+                case "write":
+                    Shell.WriteLine("Please give me a text");
+
+                    var l = await Shell.ReadLineAsync();
+                    Shell.WriteLine(l);
 
                     break;
             }

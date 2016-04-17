@@ -46,16 +46,12 @@ namespace HackIt.Core
             EventCommandEntered handler = null;
             string value = null;
             var tcs = new TaskCompletionSource<string>();
-            string prompt = _shell.Prompt;
-
-            _shell.Prompt = "";
 
             handler = new EventCommandEntered((s, e) =>
             {
                 value = e.Command;
                 tcs.SetResult(value);
 
-                _shell.Prompt = prompt;
                 _shell.CommandEntered -= handler;
             });
 
