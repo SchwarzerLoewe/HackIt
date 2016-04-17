@@ -23,11 +23,7 @@ namespace UILibrary
 
 		public ShellControl()
 		{
-			// This call is required by the Windows.Forms Form Designer.
 			InitializeComponent();
-			
-
-			// TODO: Add any initialization after the InitializeComponent call
 		}
 
 		internal void FireCommandEntered(string command)
@@ -37,8 +33,7 @@ namespace UILibrary
 
 		protected virtual void OnCommandEntered(string command)
 		{
-			if (CommandEntered != null)
-				CommandEntered(command, new CommandEnteredEventArgs(command));
+			CommandEntered?.Invoke(command, new CommandEnteredEventArgs(command));
 		}
 
 		/// <summary> 
@@ -96,10 +91,7 @@ namespace UILibrary
 			shellTextBox.WriteText(text);
 		}
 
-		public string[] GetCommandHistory()
-		{
-			return shellTextBox.GetCommandHistory();
-		}
+		public string[] GetCommandHistory() => shellTextBox.GetCommandHistory();
 
 
 		public string Prompt
@@ -107,7 +99,6 @@ namespace UILibrary
 			get { return shellTextBox.Prompt; }
 			set { shellTextBox.Prompt = value; }
 		}
-
 
 		#region Component Designer generated code
 		/// <summary> 
@@ -151,16 +142,12 @@ namespace UILibrary
 
 	public class CommandEnteredEventArgs : EventArgs
 	{
-		string command;
 		public CommandEnteredEventArgs(string command)
 		{
-			this.command = command;
+			Command = command;
 		}
 
-		public string Command
-		{
-			get { return command; }
-		}
+		public string Command { get; set; }
 	}
 
 	public delegate void EventCommandEntered(object sender, CommandEnteredEventArgs e);

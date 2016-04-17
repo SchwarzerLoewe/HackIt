@@ -12,6 +12,12 @@ namespace HackIt.Core
             set { _shell.ShellTextForeColor = value; }
         }
 
+        public static Color BackColor
+        {
+            get { return _shell.ShellTextBackColor; }
+            set { _shell.ShellTextBackColor = value; }
+        }
+
         public static Font Font
         {
             get { return _shell.ShellTextFont; }
@@ -56,6 +62,11 @@ namespace HackIt.Core
             _shell.CommandEntered += handler;
 
             return tcs.Task;
+        }
+
+        public static void Clear()
+        {
+            _shell.Clear();
         }
     }
 }
