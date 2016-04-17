@@ -61,6 +61,7 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Abbrechen";
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // mpComboBox
             // 
@@ -81,9 +82,12 @@
             this.Controls.Add(this.mpComboBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
+            this.Dragable = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MissionPackSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "";
+            this.Title = "MissionPack auswählen";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.mpComboBox, 0);

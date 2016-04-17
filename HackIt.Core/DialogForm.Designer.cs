@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.titlePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.titlePanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // titlePanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 34);
-            this.panel1.TabIndex = 0;
+            this.titlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.titlePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.titlePanel.Controls.Add(this.label1);
+            this.titlePanel.Controls.Add(this.button1);
+            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlePanel.Location = new System.Drawing.Point(0, 0);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(284, 34);
+            this.titlePanel.TabIndex = 0;
             // 
             // label1
             // 
@@ -79,22 +79,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 230);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.titlePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DialogForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DialogForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel titlePanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
     }

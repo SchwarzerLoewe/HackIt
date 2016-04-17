@@ -28,5 +28,10 @@ namespace HackIt
 
             ServiceLocator.Add("SavedGame", SavedGame.Load());
         }
+
+        private void closeBtn_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

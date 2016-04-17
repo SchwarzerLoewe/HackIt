@@ -32,6 +32,11 @@ namespace HackIt
         {
             ServiceLocator.Add("MissionPack", (mpComboBox.SelectedItem as ComboboxItem).Value);
         }
+
+        private void cancelButton_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
     public class ComboboxItem

@@ -55,6 +55,7 @@
     <Compile Include="DialogForm.Designer.cs">
       <DependentUpon>DialogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DragableBehavior.cs" />
     <Compile Include="INavigatable.cs" />
     <Compile Include="IPFinder.cs" />
     <Compile Include="ITool.cs" />
