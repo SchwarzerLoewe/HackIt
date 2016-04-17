@@ -18,6 +18,7 @@ namespace HackIt.Pages
             Shell.Init(shellControl1);
 
             Tools.Add(new SimpleCommands());
+            Tools.Add(new GroupCommand());
         }
 
         private void shellControl1_CommandEntered(object sender, UILibrary.CommandEnteredEventArgs e)

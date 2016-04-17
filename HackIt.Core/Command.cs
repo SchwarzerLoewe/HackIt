@@ -26,5 +26,10 @@ namespace HackIt.Core
 
             return cmd;
         }
+
+        public override string ToString()
+        {
+            return Name + string.Join(" ", Args);
+        }
     }
 }
