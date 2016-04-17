@@ -35,9 +35,11 @@ namespace HackIt.Core
                     
                     l.Tag = cntrl;
                     l.Text = nav.Title;
+                    l.AutoSize = true;
                     l.Margin = new Padding(5);
                     l.Padding = new Padding(5);
                     l.Font = new System.Drawing.Font("Consolas", 10);
+                    l.LinkBehavior = LinkBehavior.HoverUnderline;
 
                     l.LinkClicked += (s, e) =>
                     {

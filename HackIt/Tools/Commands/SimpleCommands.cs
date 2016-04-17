@@ -1,5 +1,4 @@
-﻿using System;
-using HackIt.Core;
+﻿using HackIt.Core;
 using UILibrary;
 
 namespace HackIt.Tools.Commands
@@ -8,7 +7,7 @@ namespace HackIt.Tools.Commands
     {
         public string Name => "*";
 
-        public async void HandleConsole(ShellControl shell, Command cmd)
+        public void HandleConsole(ShellControl shell, Command cmd)
         {
             switch (cmd.Name)
             {
@@ -27,19 +26,13 @@ namespace HackIt.Tools.Commands
                     Shell.WriteLine(cmd.Args[0]);
 
                     break;
-                case "write":
-                    Shell.WriteLine("Please give me a text: ");
-
-                    var l = await Shell.ReadLineAsync();
-                    Shell.WriteLine(l);
+                case "cls":
+                    Shell.Clear();
 
                     break;
             }
         }
 
-        public bool ShowDialog()
-        {
-            return false;
-        }
+        public bool ShowDialog() => false;
     }
 }
