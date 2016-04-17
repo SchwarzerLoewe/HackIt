@@ -66,10 +66,11 @@
             // mpComboBox
             // 
             this.mpComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mpComboBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mpComboBox.FormattingEnabled = true;
             this.mpComboBox.Location = new System.Drawing.Point(13, 47);
             this.mpComboBox.Name = "mpComboBox";
-            this.mpComboBox.Size = new System.Drawing.Size(259, 21);
+            this.mpComboBox.Size = new System.Drawing.Size(259, 23);
             this.mpComboBox.TabIndex = 2;
             this.mpComboBox.SelectedIndexChanged += new System.EventHandler(this.mpComboBox_SelectedIndexChanged);
             // 

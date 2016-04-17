@@ -36,10 +36,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(16, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 13);
+            this.label2.Size = new System.Drawing.Size(21, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "IP";
             // 
