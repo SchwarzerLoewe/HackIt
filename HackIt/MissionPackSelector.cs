@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace HackIt
 {
-    public partial class MissionPackSelector : Form
+    public partial class MissionPackSelector : DialogForm
     {
         public MissionPackSelector()
         {

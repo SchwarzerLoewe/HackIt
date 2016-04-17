@@ -49,6 +49,13 @@
   <ItemGroup>
     <Compile Include="Adorner.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="DialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INavigatable.cs" />
     <Compile Include="IPFinder.cs" />
     <Compile Include="ITool.cs" />
     <Compile Include="Models\Credential.cs" />
@@ -62,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SavedGame.cs" />
     <Compile Include="ServiceLocator.cs" />
+    <Compile Include="Shell.cs" />
     <Compile Include="Shell\CommandHistory.cs" />
     <Compile Include="Shell\ShellControl.cs">
       <SubType>UserControl</SubType>
@@ -69,7 +77,6 @@
     <Compile Include="Shell\ShellTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Shell\ShellWriter.cs" />
     <Compile Include="Templating\ArgumentCollection.cs" />
     <Compile Include="Templating\CompoundGenerator.cs" />
     <Compile Include="Templating\ConditionTagDefinition.cs" />
@@ -121,6 +128,9 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Shell\ShellControl.resx">
       <DependentUpon>ShellControl.cs</DependentUpon>
     </EmbeddedResource>

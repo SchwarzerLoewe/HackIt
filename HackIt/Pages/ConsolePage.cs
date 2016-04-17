@@ -1,45 +1,45 @@
 ﻿using HackIt.Core;
-using HackIt.Tools;
-using System;
+using HackIt.Tools.Commands;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using TestApp;
 
 namespace HackIt.Pages
 {
-    public partial class ConsolePage : UserControl
+    public partial class ConsolePage : UserControl, INavigatable
     {
         public List<ITool> Tools { get; set; } = new List<ITool>();
+
+        public string Title => "Konsole";
 
         public ConsolePage()
         {
             InitializeComponent();
 
-            Console.SetOut(new ShellWriter(shellControl1));
+            Shell.Init(shellControl1);
 
-            Tools.Add(new HelpCommand());
+            Tools.Add(new SimpleCommands());
         }
 
         private void shellControl1_CommandEntered(object sender, UILibrary.CommandEnteredEventArgs e)
         {
-            if(e.Command == "save")
-            {
-                var sg = ServiceLocator.Get<SavedGame>("SavedGame");
-                sg.Save();
-                Console.WriteLine("Saved Successfull");
-            }
-            else
-            {
-                var cmd = Command.Parse(e.Command);
+            var cmd = Command.Parse(e.Command);
 
-                foreach (var t in Tools)
+            foreach (var t in Tools)
+            {
+                if (cmd.Name == t.Name)
                 {
-                    if(cmd.Name == t.Name)
-                    {
-                        t.HandleConsole(shellControl1, cmd);
-                    }
+                    t.HandleConsole(shellControl1, cmd);
+                }
+                else if(t.Name == "*")
+                {
+                    t.HandleConsole(shellControl1, cmd);
                 }
             }
+        }
+
+        public void OnNavigate()
+        {
+            shellControl1.Focus();
         }
     }
 }

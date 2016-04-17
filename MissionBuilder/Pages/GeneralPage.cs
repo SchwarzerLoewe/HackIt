@@ -2,15 +2,16 @@
 using System.Windows.Forms;
 using HackIt.Core;
 using HackIt.Core.Models;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace MissionBuilder.Pages
 {
-    public partial class GeneralPage : UserControl
+    public partial class GeneralPage : UserControl, INavigatable
     {
         private Mission currentMission;
         private MissionPack mp;
+
+        public string Title => "General";
 
         public GeneralPage()
         {
@@ -60,6 +61,11 @@ namespace MissionBuilder.Pages
         private void toolAsDialogCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             currentMission.ToolsAsDialog = toolAsDialogCheckBox.Checked;
+        }
+
+        public void OnNavigate()
+        {
+            
         }
     }
 }

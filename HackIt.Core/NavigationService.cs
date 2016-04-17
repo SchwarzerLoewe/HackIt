@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace HackIt.Core
 {
@@ -6,12 +9,46 @@ namespace HackIt.Core
     {
         public static Control Container { get; set; }
 
-        public static void Navigate(Control ctrl)
+        public static void Navigate(INavigatable nav)
         {
+            var ctrl = nav as Control;
+
             Container.Controls.Clear();
             ctrl.Dock = DockStyle.Fill;
 
+            nav.OnNavigate();
+
             Container.Controls.Add(ctrl);
+        }
+
+        public static LinkLabel[] CreateLinks(IEnumerable<Type> types, Action<LinkLabel> initiator = null)
+        {
+            var r = new List<LinkLabel>();
+            foreach (var t in types)
+            {
+                var cntrl = Activator.CreateInstance(t);
+                var nav = cntrl as INavigatable;
+
+                if (nav != null)
+                {
+                    var l = new LinkLabel();
+                    l.Tag = cntrl;
+                    l.Text = nav.Title;
+                    l.Margin = new Padding(5);
+                    l.Padding = new Padding(5);
+
+                    l.LinkClicked += (s, e) =>
+                    {
+                        Navigate(nav);
+                    };
+
+                    initiator?.Invoke(l);
+
+                    r.Add(l);
+                }
+            }
+
+            return r.ToArray();
         }
     }
 }

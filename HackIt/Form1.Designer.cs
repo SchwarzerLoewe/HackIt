@@ -31,81 +31,39 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuContainer = new System.Windows.Forms.Panel();
-            this.consoleLink = new System.Windows.Forms.LinkLabel();
-            this.toolsLink = new System.Windows.Forms.LinkLabel();
-            this.networkLink = new System.Windows.Forms.LinkLabel();
-            this.messagesLink = new System.Windows.Forms.LinkLabel();
+            this.messagesButton = new System.Windows.Forms.Button();
             this.pageContainer = new System.Windows.Forms.Panel();
             this.policeTimer = new System.Windows.Forms.Timer(this.components);
             this.statusbarContainer = new System.Windows.Forms.Panel();
+            this.yourIPLabel = new System.Windows.Forms.Label();
             this.ipLabel = new System.Windows.Forms.Label();
-            this.messagesButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuContainer.SuspendLayout();
             this.statusbarContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuContainer
             // 
+            this.menuContainer.Controls.Add(this.flowLayoutPanel1);
             this.menuContainer.Controls.Add(this.messagesButton);
-            this.menuContainer.Controls.Add(this.consoleLink);
-            this.menuContainer.Controls.Add(this.toolsLink);
-            this.menuContainer.Controls.Add(this.networkLink);
-            this.menuContainer.Controls.Add(this.messagesLink);
             this.menuContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuContainer.Location = new System.Drawing.Point(0, 0);
             this.menuContainer.Name = "menuContainer";
             this.menuContainer.Size = new System.Drawing.Size(119, 428);
             this.menuContainer.TabIndex = 0;
             // 
-            // consoleLink
+            // messagesButton
             // 
-            this.consoleLink.ActiveLinkColor = System.Drawing.Color.LimeGreen;
-            this.consoleLink.AutoSize = true;
-            this.consoleLink.LinkColor = System.Drawing.Color.Lime;
-            this.consoleLink.Location = new System.Drawing.Point(33, 85);
-            this.consoleLink.Name = "consoleLink";
-            this.consoleLink.Size = new System.Drawing.Size(45, 13);
-            this.consoleLink.TabIndex = 3;
-            this.consoleLink.TabStop = true;
-            this.consoleLink.Text = "Konsole";
-            this.consoleLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.consoleLink_LinkClicked);
-            // 
-            // toolsLink
-            // 
-            this.toolsLink.ActiveLinkColor = System.Drawing.Color.LimeGreen;
-            this.toolsLink.AutoSize = true;
-            this.toolsLink.LinkColor = System.Drawing.Color.Lime;
-            this.toolsLink.Location = new System.Drawing.Point(26, 59);
-            this.toolsLink.Name = "toolsLink";
-            this.toolsLink.Size = new System.Drawing.Size(62, 13);
-            this.toolsLink.TabIndex = 2;
-            this.toolsLink.TabStop = true;
-            this.toolsLink.Text = "Werkzeuge";
-            // 
-            // networkLink
-            // 
-            this.networkLink.ActiveLinkColor = System.Drawing.Color.LimeGreen;
-            this.networkLink.AutoSize = true;
-            this.networkLink.LinkColor = System.Drawing.Color.Lime;
-            this.networkLink.Location = new System.Drawing.Point(30, 34);
-            this.networkLink.Name = "networkLink";
-            this.networkLink.Size = new System.Drawing.Size(52, 13);
-            this.networkLink.TabIndex = 1;
-            this.networkLink.TabStop = true;
-            this.networkLink.Text = "Netzwerk";
-            this.networkLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.networkLink_LinkClicked);
-            // 
-            // messagesLink
-            // 
-            this.messagesLink.ActiveLinkColor = System.Drawing.Color.LimeGreen;
-            this.messagesLink.AutoSize = true;
-            this.messagesLink.LinkColor = System.Drawing.Color.Lime;
-            this.messagesLink.Location = new System.Drawing.Point(25, 9);
-            this.messagesLink.Name = "messagesLink";
-            this.messagesLink.Size = new System.Drawing.Size(65, 13);
-            this.messagesLink.TabIndex = 0;
-            this.messagesLink.TabStop = true;
-            this.messagesLink.Text = "Nachrichten";
+            this.messagesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.messagesButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.messagesButton.ForeColor = System.Drawing.Color.LawnGreen;
+            this.messagesButton.Location = new System.Drawing.Point(0, 390);
+            this.messagesButton.Name = "messagesButton";
+            this.messagesButton.Size = new System.Drawing.Size(119, 38);
+            this.messagesButton.TabIndex = 4;
+            this.messagesButton.Text = "Messages";
+            this.messagesButton.UseVisualStyleBackColor = true;
             // 
             // pageContainer
             // 
@@ -117,12 +75,22 @@
             // 
             // statusbarContainer
             // 
+            this.statusbarContainer.Controls.Add(this.yourIPLabel);
             this.statusbarContainer.Controls.Add(this.ipLabel);
             this.statusbarContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.statusbarContainer.Location = new System.Drawing.Point(119, 390);
             this.statusbarContainer.Name = "statusbarContainer";
             this.statusbarContainer.Size = new System.Drawing.Size(772, 38);
             this.statusbarContainer.TabIndex = 2;
+            // 
+            // yourIPLabel
+            // 
+            this.yourIPLabel.AutoSize = true;
+            this.yourIPLabel.Location = new System.Drawing.Point(659, 14);
+            this.yourIPLabel.Name = "yourIPLabel";
+            this.yourIPLabel.Size = new System.Drawing.Size(71, 13);
+            this.yourIPLabel.TabIndex = 1;
+            this.yourIPLabel.Text = "Deine IP:  {0}";
             // 
             // ipLabel
             // 
@@ -133,17 +101,14 @@
             this.ipLabel.TabIndex = 0;
             this.ipLabel.Text = "Suche nach IP:  {0}";
             // 
-            // messagesButton
+            // flowLayoutPanel1
             // 
-            this.messagesButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.messagesButton.ForeColor = System.Drawing.Color.LawnGreen;
-            this.messagesButton.Location = new System.Drawing.Point(7, 115);
-            this.messagesButton.Name = "messagesButton";
-            this.messagesButton.Size = new System.Drawing.Size(109, 23);
-            this.messagesButton.TabIndex = 4;
-            this.messagesButton.Text = "Messages";
-            this.messagesButton.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(119, 390);
+            this.flowLayoutPanel1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -161,7 +126,6 @@
             this.Text = "HackIt";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuContainer.ResumeLayout(false);
-            this.menuContainer.PerformLayout();
             this.statusbarContainer.ResumeLayout(false);
             this.statusbarContainer.PerformLayout();
             this.ResumeLayout(false);
@@ -172,14 +136,12 @@
 
         private System.Windows.Forms.Panel menuContainer;
         private System.Windows.Forms.Panel pageContainer;
-        private System.Windows.Forms.LinkLabel consoleLink;
-        private System.Windows.Forms.LinkLabel toolsLink;
-        private System.Windows.Forms.LinkLabel networkLink;
-        private System.Windows.Forms.LinkLabel messagesLink;
         private System.Windows.Forms.Timer policeTimer;
         private System.Windows.Forms.Panel statusbarContainer;
         private System.Windows.Forms.Label ipLabel;
         private System.Windows.Forms.Button messagesButton;
+        private System.Windows.Forms.Label yourIPLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

@@ -1,6 +1,5 @@
 ﻿using HackIt.Core;
 using HackIt.Pages;
-using System;
 using System.Windows.Forms;
 
 namespace HackIt
@@ -17,19 +16,17 @@ namespace HackIt
             var badge = Adorner.GetBadge(messagesButton);
             badge.ForeColor = System.Drawing.Color.LawnGreen;
 
+            var links = NavigationService.CreateLinks(new[] { typeof(ConsolePage), typeof(NetworkPage) },
+                (_) =>
+                {
+                    _.ForeColor = System.Drawing.Color.FromArgb(0, 192, 0);
+                    _.LinkColor = System.Drawing.Color.FromArgb(0, 192, 0);
+                    _.VisitedLinkColor = System.Drawing.Color.FromArgb(0, 192, 0);
+                });
+
+            flowLayoutPanel1.Controls.AddRange(links);
+
             ServiceLocator.Add("SavedGame", SavedGame.Load());
-        }
-
-        private void consoleLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            NavigationService.Navigate(new ConsolePage());
-            var finder = new IPFinder(new Core.Models.Computer() { IP = Utils.GenerateIP((int)DateTime.Now.Ticks) }, ipLabel);
-            finder.StartFinding();
-        }
-
-        private void networkLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            NavigationService.Navigate(new NetworkPage());
         }
     }
 }
