@@ -16,7 +16,7 @@ namespace HackIt.Core
             var parsed = src.Split('"')
                      .Select((element, index) => index % 2 == 0  // If even index
                                            ? element.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)  // Split the item
-                                           : new string[] { Regex.Unescape(element) })  // Keep the entire item
+                                           : new string[] { element })  // Keep the entire item
                      .SelectMany(element => element).ToList();
 
             cmd.Name = parsed[0];
@@ -27,9 +27,6 @@ namespace HackIt.Core
             return cmd;
         }
 
-        public override string ToString()
-        {
-            return Name + string.Join(" ", Args);
-        }
+        public override string ToString() => Name + " " + string.Join(" ", Args);
     }
 }

@@ -8,40 +8,36 @@ namespace HackIt.Tools.Commands
     {
         public string Name => "*";
 
-        public List<Command> Internals { get; set; } = new List<Command>();
+        public List<Command> Commands { get; set; } = new List<Command>();
         public string GroupName { get; set; }
-
-        public Dictionary<string, List<Command>> Commands { get; set; }
 
         public async void HandleConsole(ShellControl shell, Command cmd)
         {
             if (cmd.Name == "group")
             {
-                GroupName = cmd.Args[1];
-
                 var mode = true;
+                shell.Prompt = "> \t";
+
                 while (mode)
                 {
                     var cmds = await Shell.ReadLineAsync();
                     if (cmd.Args[0] == "end")
                     {
-                        Commands.Add(GroupName, Internals);
-
-                        GroupName = "";
-                        Internals = new List<Command>();
-
                         mode = false;
+                        shell.Prompt = "> ";
                         break;
                     }
                     else
                     {
-                        Internals.Add(Command.Parse(cmds));
+                        //GroupName = cmd.Args[1];
                     }
+
+                    Commands.Add(Command.Parse(cmds));
                 }
             }
             else
             {
-                
+
             }
         }
 
