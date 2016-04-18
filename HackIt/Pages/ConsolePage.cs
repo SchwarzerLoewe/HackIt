@@ -8,6 +8,7 @@ namespace HackIt.Pages
     public partial class ConsolePage : UserControl, INavigatable
     {
         public List<ITool> Tools { get; set; } = new List<ITool>();
+        public static Dictionary<string, List<Command>> Commands = new Dictionary<string, List<Command>>();
 
         public string Title => "Konsole";
 
@@ -17,8 +18,8 @@ namespace HackIt.Pages
 
             Shell.Init(shellControl1);
 
-            Tools.Add(new SimpleCommands());
             Tools.Add(new GroupCommand());
+            Tools.Add(new SimpleCommands());
         }
 
         private void shellControl1_CommandEntered(object sender, UILibrary.CommandEnteredEventArgs e)

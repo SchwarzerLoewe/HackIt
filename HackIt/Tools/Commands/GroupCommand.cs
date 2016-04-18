@@ -1,6 +1,7 @@
 ﻿using HackIt.Core;
 using UILibrary;
 using System.Collections.Generic;
+using HackIt.Pages;
 
 namespace HackIt.Tools.Commands
 {
@@ -16,28 +17,40 @@ namespace HackIt.Tools.Commands
             if (cmd.Name == "group")
             {
                 var mode = true;
-                shell.Prompt = "> \t";
+                shell.Prompt = "< ";
+                //GroupName = cmd.Args[1];
 
                 while (mode)
                 {
                     var cmds = await Shell.ReadLineAsync();
-                    if (cmd.Args[0] == "end")
+                    if (cmd.ToString() == "group end")
                     {
                         mode = false;
                         shell.Prompt = "> ";
+
+                        Commands.RemoveAt(Commands.Count - 1);
+
+                        ConsolePage.Commands.Add("cmd", Commands);
+                        Commands = new List<Command>();
+                        GroupName = "";
+
                         break;
                     }
                     else
                     {
-                        //GroupName = cmd.Args[1];
+                        Commands.Add(Command.Parse(cmds));
                     }
-
-                    Commands.Add(Command.Parse(cmds));
                 }
             }
             else
             {
+                foreach (var c in ConsolePage.Commands)
+                {
+                    if(c.Key == cmd.Name)
+                    {
 
+                    }
+                }
             }
         }
 
