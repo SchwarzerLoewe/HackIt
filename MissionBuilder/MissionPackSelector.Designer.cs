@@ -54,7 +54,7 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 1;
-            this.cancelButton.Text = "Abbrechen";
+            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // mpComboBox
@@ -75,7 +75,7 @@
             this.newMissionPackButton.Name = "newMissionPackButton";
             this.newMissionPackButton.Size = new System.Drawing.Size(75, 23);
             this.newMissionPackButton.TabIndex = 3;
-            this.newMissionPackButton.Text = "Neu";
+            this.newMissionPackButton.Text = "New";
             this.newMissionPackButton.UseVisualStyleBackColor = true;
             this.newMissionPackButton.Click += new System.EventHandler(this.newMissionPackButton_Click);
             // 

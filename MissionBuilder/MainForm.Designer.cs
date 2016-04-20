@@ -1,6 +1,6 @@
 ﻿namespace MissionBuilder
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neueMissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,47 +67,47 @@
             this.toolStripSeparator1,
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.dateiToolStripMenuItem.Text = "Datei";
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.dateiToolStripMenuItem.Text = "File";
             // 
             // neueMissionToolStripMenuItem
             // 
             this.neueMissionToolStripMenuItem.Name = "neueMissionToolStripMenuItem";
-            this.neueMissionToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.neueMissionToolStripMenuItem.Text = "Neue Mission";
+            this.neueMissionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.neueMissionToolStripMenuItem.Text = "New Mission";
             this.neueMissionToolStripMenuItem.Click += new System.EventHandler(this.neueMissionToolStripMenuItem_Click);
             // 
             // missionAuswählenToolStripMenuItem
             // 
             this.missionAuswählenToolStripMenuItem.Name = "missionAuswählenToolStripMenuItem";
-            this.missionAuswählenToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.missionAuswählenToolStripMenuItem.Text = "Mission Auswählen";
+            this.missionAuswählenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.missionAuswählenToolStripMenuItem.Text = "Select Mission";
             this.missionAuswählenToolStripMenuItem.Click += new System.EventHandler(this.missionAuswählenToolStripMenuItem_Click);
             // 
             // speichernToolStripMenuItem
             // 
             this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
-            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.speichernToolStripMenuItem.Text = "Speichern";
+            this.speichernToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.speichernToolStripMenuItem.Text = "Save";
             this.speichernToolStripMenuItem.Click += new System.EventHandler(this.speichernToolStripMenuItem_Click);
             // 
             // ladenToolStripMenuItem
             // 
             this.ladenToolStripMenuItem.Name = "ladenToolStripMenuItem";
-            this.ladenToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.ladenToolStripMenuItem.Text = "Laden";
+            this.ladenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ladenToolStripMenuItem.Text = "Load";
             this.ladenToolStripMenuItem.Click += new System.EventHandler(this.ladenToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.beendenToolStripMenuItem.Text = "Beenden";
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Text = "Exit";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
             // menuContainer
@@ -126,30 +126,30 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Location = new System.Drawing.Point(24, 56);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(65, 13);
+            this.linkLabel3.Size = new System.Drawing.Size(55, 13);
             this.linkLabel3.TabIndex = 2;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Nachrichten";
+            this.linkLabel3.Text = "Messages";
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(24, 33);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(64, 13);
+            this.linkLabel2.Size = new System.Drawing.Size(55, 13);
             this.linkLabel2.TabIndex = 1;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Dateisystem";
+            this.linkLabel2.Text = "Filesystem";
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(24, 11);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(52, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(44, 13);
             this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Allgemein";
+            this.linkLabel1.Text = "General";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // pageContainer
@@ -164,7 +164,7 @@
             // 
             this.openFileDialog1.Filter = "MissionPack (*.mp)|*.mp";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +174,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "MissionBuilder";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

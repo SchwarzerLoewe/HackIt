@@ -59,7 +59,7 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(91, 27);
             this.cancelButton.TabIndex = 1;
-            this.cancelButton.Text = "Abbrechen";
+            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -89,7 +89,7 @@
             this.Name = "MissionPackSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "";
-            this.Title = "MissionPack auswählen";
+            this.Title = "Select MissionPack";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.mpComboBox, 0);

@@ -61,9 +61,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 26);
+            this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "benutzbare\r\nWerzeuge";
+            this.label3.Text = "Usable Tools";
             // 
             // toolsListBox
             // 
@@ -78,18 +78,18 @@
             this.toolsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolsComboBox.FormattingEnabled = true;
             this.toolsComboBox.Items.AddRange(new object[] {
-            "PasswortCracker",
+            "PasswordCracker",
             "VirusUploader",
             "Downloader",
             "Deleter"});
-            this.toolsComboBox.Location = new System.Drawing.Point(243, 81);
+            this.toolsComboBox.Location = new System.Drawing.Point(243, 85);
             this.toolsComboBox.Name = "toolsComboBox";
             this.toolsComboBox.Size = new System.Drawing.Size(121, 21);
             this.toolsComboBox.TabIndex = 6;
             // 
             // addToolBtn
             // 
-            this.addToolBtn.Location = new System.Drawing.Point(370, 79);
+            this.addToolBtn.Location = new System.Drawing.Point(370, 83);
             this.addToolBtn.Name = "addToolBtn";
             this.addToolBtn.Size = new System.Drawing.Size(45, 23);
             this.addToolBtn.TabIndex = 7;
@@ -99,7 +99,7 @@
             // 
             // removeToolBtn
             // 
-            this.removeToolBtn.Location = new System.Drawing.Point(421, 79);
+            this.removeToolBtn.Location = new System.Drawing.Point(421, 83);
             this.removeToolBtn.Name = "removeToolBtn";
             this.removeToolBtn.Size = new System.Drawing.Size(45, 23);
             this.removeToolBtn.TabIndex = 8;
@@ -120,11 +120,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 44);
+            this.label4.Location = new System.Drawing.Point(6, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 26);
+            this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Werkzeuge als\r\nDialoge";
+            this.label4.Text = "Tools as Dialoges";
             // 
             // GeneralPage
             // 

@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace MissionBuilder
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         MissionPack mp;
         Mission currentMission;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 

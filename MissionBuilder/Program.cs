@@ -15,7 +15,7 @@ namespace MissionBuilder
             var mpd = new MissionPackSelector();
             if (mpd.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Form1());
+                Application.Run(new MainForm());
             }
         }
     }
