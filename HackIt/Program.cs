@@ -15,7 +15,7 @@ namespace HackIt
             var mps = new MissionPackSelector();
             if(mps.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Form1());
+                Application.Run(new MainForm());
             }
         }
     }

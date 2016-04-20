@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace HackIt
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -31,6 +31,7 @@ namespace HackIt
             flowLayoutPanel1.Controls.AddRange(links);
 
             ServiceLocator.Add("SavedGame", SavedGame.Load());
+            NavigationService.Navigate(new WelcomePage());
         }
 
         private void closeBtn_Click(object sender, System.EventArgs e)

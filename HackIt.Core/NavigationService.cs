@@ -32,6 +32,8 @@ namespace HackIt.Core
                 if (nav != null)
                 {
                     var l = new LinkLabel();
+
+                    if (nav.Title == "") continue;
                     
                     l.Tag = cntrl;
                     l.Text = nav.Title;

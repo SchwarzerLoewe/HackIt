@@ -1,16 +1,17 @@
-﻿using HackIt.Core;
+﻿using System;
 using System.Windows.Forms;
+using HackIt.Core;
 
 namespace HackIt.Pages
 {
-    public partial class NetworkPage : UserControl, INavigatable
+    public partial class WelcomePage : UserControl, INavigatable
     {
-        public NetworkPage()
+        public WelcomePage()
         {
             InitializeComponent();
         }
 
-        public string Title => "Network";
+        public string Title => "";
 
         public void OnNavigate()
         {
