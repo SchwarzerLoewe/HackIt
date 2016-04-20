@@ -1,9 +1,6 @@
 ﻿using HackIt.Core;
 using HackIt.Pages;
-using System;
 using System.Drawing;
-using System.IO;
-using System.Net;
 using System.Windows.Forms;
 
 namespace HackIt
@@ -18,13 +15,6 @@ namespace HackIt
 
             var drag = DragableBehavior.Create(titleBar, this);
             drag.EnableDrag();
-
-            var imgs = new PreLoader<string>();
-            imgs.PreLoad(new Func<string, string>((_) =>
-            {
-                var wc = new WebClient();
-                return wc.DownloadStringTaskAsync(new Uri(_)).Result;
-            }), "http://mail.aol.de/");
 
             Adorner.AddBadgeTo(messagesButton, "10");
             var badge = Adorner.GetBadge(messagesButton);

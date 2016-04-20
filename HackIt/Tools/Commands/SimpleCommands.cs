@@ -2,12 +2,17 @@
 using System.Drawing;
 using System.Windows.Forms;
 using UILibrary;
+using System;
+using HackIt.Pages;
 
 namespace HackIt.Tools.Commands
 {
     public class SimpleCommands : ITool
     {
-        public string Name => "*";
+        public string HelpText => "";
+
+        public string Name { get; set; } = "*";
+        public bool UseRegex { get; set; } = false;
 
         public void HandleConsole(ShellControl shell, Command cmd)
         {
@@ -15,6 +20,10 @@ namespace HackIt.Tools.Commands
             {
                 case "help":
                     Shell.WriteLine("Here some Helps:");
+                    foreach (var c in ConsolePage.Tools)
+                    {
+                        Shell.WriteLine(c.HelpText);
+                    }
 
                     break;
                 case "save":

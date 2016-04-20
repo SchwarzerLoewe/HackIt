@@ -41,9 +41,9 @@
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.okButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.okButton.ForeColor = System.Drawing.Color.Black;
-            this.okButton.Location = new System.Drawing.Point(197, 83);
+            this.okButton.Location = new System.Drawing.Point(230, 96);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.Size = new System.Drawing.Size(87, 27);
             this.okButton.TabIndex = 0;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = false;
@@ -55,9 +55,9 @@
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelButton.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.ForeColor = System.Drawing.Color.Black;
-            this.cancelButton.Location = new System.Drawing.Point(113, 83);
+            this.cancelButton.Location = new System.Drawing.Point(132, 96);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(78, 23);
+            this.cancelButton.Size = new System.Drawing.Size(91, 27);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Abbrechen";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -68,18 +68,19 @@
             this.mpComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mpComboBox.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mpComboBox.FormattingEnabled = true;
-            this.mpComboBox.Location = new System.Drawing.Point(13, 47);
+            this.mpComboBox.Location = new System.Drawing.Point(15, 54);
             this.mpComboBox.Name = "mpComboBox";
-            this.mpComboBox.Size = new System.Drawing.Size(259, 23);
+            this.mpComboBox.Size = new System.Drawing.Size(301, 23);
             this.mpComboBox.TabIndex = 2;
             this.mpComboBox.SelectedIndexChanged += new System.EventHandler(this.mpComboBox_SelectedIndexChanged);
             // 
             // MissionPackSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.okButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(284, 118);
+            this.ClientSize = new System.Drawing.Size(331, 136);
             this.Controls.Add(this.mpComboBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);

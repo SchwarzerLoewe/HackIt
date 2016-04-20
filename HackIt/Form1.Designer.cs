@@ -103,18 +103,18 @@
             this.yourIPLabel.AutoSize = true;
             this.yourIPLabel.Location = new System.Drawing.Point(659, 14);
             this.yourIPLabel.Name = "yourIPLabel";
-            this.yourIPLabel.Size = new System.Drawing.Size(71, 13);
+            this.yourIPLabel.Size = new System.Drawing.Size(65, 13);
             this.yourIPLabel.TabIndex = 1;
-            this.yourIPLabel.Text = "Deine IP:  {0}";
+            this.yourIPLabel.Text = "Your IP:  {0}";
             // 
             // ipLabel
             // 
             this.ipLabel.AutoSize = true;
             this.ipLabel.Location = new System.Drawing.Point(16, 14);
             this.ipLabel.Name = "ipLabel";
-            this.ipLabel.Size = new System.Drawing.Size(101, 13);
+            this.ipLabel.Size = new System.Drawing.Size(106, 13);
             this.ipLabel.TabIndex = 0;
-            this.ipLabel.Text = "Suche nach IP:  {0}";
+            this.ipLabel.Text = "Searching for IP:  {0}";
             // 
             // titleBar
             // 

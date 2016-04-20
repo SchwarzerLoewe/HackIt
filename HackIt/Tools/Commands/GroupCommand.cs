@@ -2,42 +2,60 @@
 using UILibrary;
 using System.Collections.Generic;
 using HackIt.Pages;
+using System;
+using System.Linq;
 
 namespace HackIt.Tools.Commands
 {
     public class GroupCommand : ITool
     {
-        public string Name => "*";
+        public string Name { get; set; } = "group";
+        public string HelpText => "group <groupname>|end";
+
+        public GroupCommand()
+        {
+            
+        }
 
         public List<Command> Commands { get; set; } = new List<Command>();
         public string GroupName { get; set; }
+        public bool UseRegex { get; set; } = true;
 
         public async void HandleConsole(ShellControl shell, Command cmd)
         {
+            // group <name>
             if (cmd.Name == "group")
             {
+                ConsolePage.GroupTool = this;
+
                 var mode = true;
                 shell.Prompt = "< ";
-                //GroupName = cmd.Args[1];
+                if (cmd.Args[0] != "end")
+                {
+                    GroupName = cmd.Args[0];
+                }
+
+                ConsolePage.IsRecognizing = true;
 
                 while (mode)
                 {
-                    var cmds = await Shell.ReadLineAsync();
-                    if (cmd.ToString() == "group end")
+                    if (cmd.ToString().Trim() == "group end")
                     {
                         mode = false;
                         shell.Prompt = "> ";
+                        ConsolePage.IsRecognizing = false;
 
-                        Commands.RemoveAt(Commands.Count - 1);
+                        ConsolePage.Commands.Add(GroupName, Commands.ToArray().ToList());
+                        //Name += "|" + GroupName;
 
-                        ConsolePage.Commands.Add("cmd", Commands);
-                        Commands = new List<Command>();
+                        Commands.Clear();
                         GroupName = "";
 
                         break;
                     }
                     else
                     {
+                        var cmds = await Shell.ReadLineAsync();
                         Commands.Add(Command.Parse(cmds));
                     }
                 }
@@ -48,7 +66,13 @@ namespace HackIt.Tools.Commands
                 {
                     if(c.Key == cmd.Name)
                     {
-
+                        foreach (var v in c.Value)
+                        {
+                            foreach (var tool in ConsolePage.Tools)
+                            {
+                                tool.HandleConsole(shell, v);
+                            }
+                        }
                     }
                 }
             }
