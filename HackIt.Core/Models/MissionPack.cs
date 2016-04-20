@@ -8,7 +8,7 @@ namespace HackIt.Core
     public class MissionPack : List<Mission>
     {
         public string Name { get; set; }
-
+        
         public static MissionPack Load(string filename)
         {
             MissionPack sg = new MissionPack();
@@ -53,6 +53,7 @@ namespace HackIt.Core
                 {
                     col.Insert(m);
                 }
+                
                 db.Commit();
             }
         }

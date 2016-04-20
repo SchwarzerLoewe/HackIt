@@ -39,19 +39,29 @@ namespace HackIt.Tools.Commands
 
                 while (mode)
                 {
-                    if (cmd.ToString().Trim() == "group end")
+                    if (cmd.Args[0] == "end")
                     {
+                        if(ConsolePage.Commands.ContainsKey(GroupName))
+                        {
+                            Shell.WriteLine("Group already exists, sorry");
+                            break;
+                        }
                         mode = false;
                         shell.Prompt = "> ";
                         ConsolePage.IsRecognizing = false;
 
                         ConsolePage.Commands.Add(GroupName, Commands.ToArray().ToList());
-                        //Name += "|" + GroupName;
+                        var mp = ServiceLocator.Get<SavedGame>("SavedGame");
+                        mp.Commands.Add(GroupName, Commands.ToArray().ToList());
 
                         Commands.Clear();
                         GroupName = "";
 
                         break;
+                    }
+                    else if (cmd.Args[0] == "delete")
+                    {
+
                     }
                     else
                     {

@@ -7,3 +7,4 @@ Missionseditor
 
 IPAddressFinder bug
 WelcomePage
+loading fix

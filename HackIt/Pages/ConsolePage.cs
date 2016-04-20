@@ -1,6 +1,7 @@
 ﻿using HackIt.Core;
 using HackIt.Tools.Commands;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -29,46 +30,51 @@ namespace HackIt.Pages
         private void shellControl1_CommandEntered(object sender, UILibrary.CommandEnteredEventArgs e)
         {
             var cmd = Command.Parse(e.Command);
-
-
-            foreach (var x in Commands)
+            if (IsRecognizing)
             {
-                if(x.Key == cmd.Name)
+                GroupTool.HandleConsole(shellControl1, cmd);
+            }
+            else
+            {
+                foreach (var x in Commands.ToArray())
                 {
-                    foreach (var cm in x.Value)
+                    if (x.Key == cmd.Name)
                     {
-                        foreach (var t in Tools)
+                        foreach (var cm in x.Value)
                         {
-                            if (cm.Name == t.Name)
+                            foreach (var t in Tools)
                             {
-                                t.HandleConsole(shellControl1, cm);
+                                if (cm.Name == t.Name || t.Name == "*")
+                                {
+                                    t.HandleConsole(shellControl1, cm);
+                                }
                             }
                         }
                     }
                 }
-            }
-            foreach (var t in Tools)
-            {
-                if (t.UseRegex)
+                foreach (var t in Tools)
                 {
-                    if (Regex.IsMatch(cmd.Name, t.Name))
+                    if (t.UseRegex)
                     {
-                        t.HandleConsole(shellControl1, cmd);
+                        if (Regex.IsMatch(cmd.Name, t.Name))
+                        {
+                            t.HandleConsole(shellControl1, cmd);
+                        }
+                        else if (t.Name.Contains("*"))
+                        {
+                            t.HandleConsole(shellControl1, cmd);
+                        }
                     }
-                    else if (t.Name.Contains("*"))
+                    else
                     {
-                        t.HandleConsole(shellControl1, cmd);
-                    }
-                }
-                else
-                {
-                    if (cmd.Name == t.Name)
-                    {
-                        t.HandleConsole(shellControl1, cmd);
-                    }
-                    else if (t.Name == "*")
-                    {
-                        t.HandleConsole(shellControl1, cmd);
+                        if (cmd.Name == t.Name)
+                        {
+                            t.HandleConsole(shellControl1, cmd);
+                        }
+                        else if (t.Name == "*")
+                        {
+                            t.HandleConsole(shellControl1, cmd);
+                        }
                     }
                 }
             }

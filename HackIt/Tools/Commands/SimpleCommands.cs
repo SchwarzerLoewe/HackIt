@@ -33,6 +33,13 @@ namespace HackIt.Tools.Commands
                     Shell.WriteLine("Successfully saved");
 
                     break;
+                case "load":
+                    var s = ServiceLocator.Get<SavedGame>("SavedGame");
+                    s.Save();
+
+                    Shell.WriteLine("Successfully loaded");
+
+                    break;
                 case "echo":
                     Shell.WriteLine(cmd.Args[0]);
 
