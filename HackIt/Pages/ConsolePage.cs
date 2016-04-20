@@ -10,7 +10,6 @@ namespace HackIt.Pages
     public partial class ConsolePage : UserControl, INavigatable
     {
         public static List<ITool> Tools { get; set; } = new List<ITool>();
-        public static Dictionary<string, List<Command>> Commands = new Dictionary<string, List<Command>>();
         public static bool IsRecognizing { get; set; }
         public static ITool GroupTool { get; set; }
 
@@ -29,6 +28,7 @@ namespace HackIt.Pages
 
         private void shellControl1_CommandEntered(object sender, UILibrary.CommandEnteredEventArgs e)
         {
+            var sg = ServiceLocator.Get<SavedGame>("SavedGame");
             var cmd = Command.Parse(e.Command);
             if (IsRecognizing)
             {
@@ -36,7 +36,7 @@ namespace HackIt.Pages
             }
             else
             {
-                foreach (var x in Commands.ToArray())
+                foreach (var x in sg.Commands.ToArray())
                 {
                     if (x.Key == cmd.Name)
                     {

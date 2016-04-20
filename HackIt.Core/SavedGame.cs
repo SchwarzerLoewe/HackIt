@@ -23,18 +23,16 @@ namespace HackIt.Core
                 var col = db.GetCollection<SavedGame>("Game");
                 sg = col.FindById(0);
 
-                var cmds = db.GetCollection<Dictionary<string, List<Command>>>("Commands");
+                if (sg == null) sg = new SavedGame();
+
+                var cmds = db.GetCollection<CustomCommand>("Commands");
                 var fa = cmds.FindAll();
                 foreach (var item in fa)
                 {
-                    foreach (var l in item)
-                    {
-                        sg.Commands.Add(l.Key, l.Value);
-                    }
+                    if (sg.Commands.ContainsKey(item.Name)) continue;
+                    sg.Commands.Add(item.Name, item.Commands);
                 }
             }
-
-            if (sg == null) sg = new SavedGame();
 
             return sg;
         }
@@ -54,9 +52,16 @@ namespace HackIt.Core
                     col.Update(0, this);
                 }
 
-                var cmds = db.GetCollection<Dictionary<string, List<Command>>>("Commands");
+                var cmds = db.GetCollection<CustomCommand>("Commands");
 
-                cmds.Insert(new List<Dictionary<string, List<Command>>> { Commands });
+                foreach (var c in Commands)
+                {
+                    var cm = new CustomCommand();
+                    cm.Name = c.Key;
+                    cm.Commands = c.Value;
+
+                    cmds.Insert(cm);
+                }
 
                 db.Commit();
             }

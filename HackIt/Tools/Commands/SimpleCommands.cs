@@ -35,7 +35,7 @@ namespace HackIt.Tools.Commands
                     break;
                 case "load":
                     var s = ServiceLocator.Get<SavedGame>("SavedGame");
-                    s.Save();
+                    ServiceLocator.Add("SavedGame", SavedGame.Load());
 
                     Shell.WriteLine("Successfully loaded");
 

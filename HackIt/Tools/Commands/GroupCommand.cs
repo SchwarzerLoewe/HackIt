@@ -23,7 +23,7 @@ namespace HackIt.Tools.Commands
 
         public async void HandleConsole(ShellControl shell, Command cmd)
         {
-            // group <name>
+            var sg = ServiceLocator.Get<SavedGame>("SavedGame");
             if (cmd.Name == "group")
             {
                 ConsolePage.GroupTool = this;
@@ -41,7 +41,7 @@ namespace HackIt.Tools.Commands
                 {
                     if (cmd.Args[0] == "end")
                     {
-                        if(ConsolePage.Commands.ContainsKey(GroupName))
+                        if(sg.Commands.ContainsKey(GroupName))
                         {
                             Shell.WriteLine("Group already exists, sorry");
                             break;
@@ -50,7 +50,7 @@ namespace HackIt.Tools.Commands
                         shell.Prompt = "> ";
                         ConsolePage.IsRecognizing = false;
 
-                        ConsolePage.Commands.Add(GroupName, Commands.ToArray().ToList());
+                        sg.Commands.Add(GroupName, Commands.ToArray().ToList());
                         var mp = ServiceLocator.Get<SavedGame>("SavedGame");
                         mp.Commands.Add(GroupName, Commands.ToArray().ToList());
 
@@ -72,7 +72,7 @@ namespace HackIt.Tools.Commands
             }
             else
             {
-                foreach (var c in ConsolePage.Commands)
+                foreach (var c in sg.Commands)
                 {
                     if(c.Key == cmd.Name)
                     {
@@ -88,9 +88,6 @@ namespace HackIt.Tools.Commands
             }
         }
 
-        public bool ShowDialog()
-        {
-            return false;
-        }
+        public bool ShowDialog() => false;
     }
 }

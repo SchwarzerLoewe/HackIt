@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Adorner.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="CustomCommand.cs" />
     <Compile Include="DialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
