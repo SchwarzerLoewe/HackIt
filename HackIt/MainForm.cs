@@ -16,10 +16,6 @@ namespace HackIt
             var drag = DragableBehavior.Create(titleBar, this);
             drag.EnableDrag();
 
-            Adorner.AddBadgeTo(messagesButton, "10");
-            var badge = Adorner.GetBadge(messagesButton);
-            badge.ForeColor = Color.LawnGreen;
-
             var links = NavigationService.CreateLinks(new[] { typeof(ConsolePage), typeof(NetworkPage) },
                 (_) =>
                 {

@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuContainer = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.messagesButton = new System.Windows.Forms.Button();
             this.pageContainer = new System.Windows.Forms.Panel();
             this.policeTimer = new System.Windows.Forms.Timer(this.components);
             this.statusbarContainer = new System.Windows.Forms.Panel();
@@ -51,7 +50,6 @@
             // menuContainer
             // 
             this.menuContainer.Controls.Add(this.flowLayoutPanel1);
-            this.menuContainer.Controls.Add(this.messagesButton);
             this.menuContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuContainer.Location = new System.Drawing.Point(0, 38);
             this.menuContainer.Name = "menuContainer";
@@ -64,21 +62,8 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(119, 352);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(119, 390);
             this.flowLayoutPanel1.TabIndex = 5;
-            // 
-            // messagesButton
-            // 
-            this.messagesButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.messagesButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.messagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.messagesButton.ForeColor = System.Drawing.Color.LawnGreen;
-            this.messagesButton.Location = new System.Drawing.Point(0, 352);
-            this.messagesButton.Name = "messagesButton";
-            this.messagesButton.Size = new System.Drawing.Size(119, 38);
-            this.messagesButton.TabIndex = 4;
-            this.messagesButton.Text = "Messages";
-            this.messagesButton.UseVisualStyleBackColor = true;
             // 
             // pageContainer
             // 
@@ -170,7 +155,7 @@
             this.formTitleLabel.TabIndex = 0;
             this.formTitleLabel.Text = "HackIt";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +168,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HackIt";
             this.menuContainer.ResumeLayout(false);
@@ -203,7 +188,6 @@
         private System.Windows.Forms.Timer policeTimer;
         private System.Windows.Forms.Panel statusbarContainer;
         private System.Windows.Forms.Label ipLabel;
-        private System.Windows.Forms.Button messagesButton;
         private System.Windows.Forms.Label yourIPLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel titleBar;

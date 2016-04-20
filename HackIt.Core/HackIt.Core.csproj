@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adorner.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CustomCommand.cs" />
     <Compile Include="DialogForm.cs">
