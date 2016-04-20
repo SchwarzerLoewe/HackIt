@@ -10,7 +10,7 @@ namespace HackIt.Tools.Commands
     public class GroupCommand : ITool
     {
         public string Name { get; set; } = "group";
-        public string HelpText => "group <groupname>|end";
+        public string HelpText => "group <groupname>|end|delete <groupname>";
 
         public List<Command> Commands { get; set; } = new List<Command>();
         public string GroupName { get; set; }
@@ -22,6 +22,12 @@ namespace HackIt.Tools.Commands
             if (cmd.Name == "group")
             {
                 ConsolePage.GroupTool = this;
+
+                if(cmd.Args[0] == "delete")
+                {
+                    sg.Commands.Remove(cmd.Args[1]);
+                    return;
+                }
 
                 var mode = true;
                 shell.Prompt = "< ";
@@ -51,10 +57,6 @@ namespace HackIt.Tools.Commands
                         GroupName = "";
 
                         break;
-                    }
-                    else if (cmd.Args[0] == "delete")
-                    {
-
                     }
                     else
                     {

@@ -2,14 +2,13 @@
 using System.Drawing;
 using System.Windows.Forms;
 using UILibrary;
-using System;
 using HackIt.Pages;
 
 namespace HackIt.Tools.Commands
 {
     public class SimpleCommands : ITool
     {
-        public string HelpText => "";
+        public string HelpText => "save\r\nload\r\necho <text in qotes>\r\ncls\r\nshutdown\r\ncolor <backcolor in hex> <forecolor in hex>";
 
         public string Name { get; set; } = "*";
         public bool UseRegex { get; set; } = false;
