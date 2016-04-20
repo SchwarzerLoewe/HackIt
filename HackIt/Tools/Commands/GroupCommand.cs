@@ -12,11 +12,6 @@ namespace HackIt.Tools.Commands
         public string Name { get; set; } = "group";
         public string HelpText => "group <groupname>|end";
 
-        public GroupCommand()
-        {
-            
-        }
-
         public List<Command> Commands { get; set; } = new List<Command>();
         public string GroupName { get; set; }
         public bool UseRegex { get; set; } = true;
@@ -51,8 +46,6 @@ namespace HackIt.Tools.Commands
                         ConsolePage.IsRecognizing = false;
 
                         sg.Commands.Add(GroupName, Commands.ToArray().ToList());
-                        var mp = ServiceLocator.Get<SavedGame>("SavedGame");
-                        mp.Commands.Add(GroupName, Commands.ToArray().ToList());
 
                         Commands.Clear();
                         GroupName = "";

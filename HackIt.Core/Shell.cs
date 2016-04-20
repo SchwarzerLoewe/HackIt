@@ -33,7 +33,7 @@ namespace HackIt.Core
 
         public static void WriteLine(object obj)
         {
-            _shell.WriteText(obj.ToString() + "\r");
+            _shell.WriteText(obj.ToString() + "\r\n");
         }
 
         public static Task<string> ReadLineAsync()
