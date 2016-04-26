@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 namespace UILibrary
 {
-    internal class ShellTextBox : TextBox
+    internal class ShellTextBox : RichTextBox
     {
         private string prompt = ">>>";
         private CommandHistory commandHistory = new CommandHistory();
@@ -62,7 +62,7 @@ namespace UILibrary
             // 
             // ShellTextBox
             // 
-            AcceptsReturn = true;
+            //AcceptsReturn = true;
             AcceptsTab = true;
             BackColor = System.Drawing.Color.Black;
             BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -70,7 +70,7 @@ namespace UILibrary
             ForeColor = System.Drawing.Color.LawnGreen;
             MaxLength = 0;
             Multiline = true;
-            ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            ScrollBars = RichTextBoxScrollBars.Both;
             Size = new System.Drawing.Size(400, 176);
             KeyDown += new System.Windows.Forms.KeyEventHandler(ShellControl_KeyDown);
             KeyPress += new System.Windows.Forms.KeyPressEventHandler(shellTextBox_KeyPress);
@@ -96,7 +96,6 @@ namespace UILibrary
         // prevents the e.Handled = true from having the desired effect in KeyDown
         private void shellTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
             // Handle backspace
             if (e.KeyChar == (char)8 && IsCaretJustBeforePrompt())
             {
@@ -166,13 +165,24 @@ namespace UILibrary
         private string GetCurrentLine()
         {
             if (Lines.Length > 0)
+            {
+                if((string)Lines.GetValue(Lines.GetLength(0) - 1) == "")
+                {
+                    return (string)Lines.GetValue(Lines.GetLength(0) - 2);
+                }
                 return (string)Lines.GetValue(Lines.GetLength(0) - 1);
+            }
             else
+            {
                 return "";
+            }
         }
 
-        private string GetTextAtPrompt() =>
-            GetCurrentLine().Substring(prompt.Length);
+        private string GetTextAtPrompt()
+        {
+            var l = GetCurrentLine();
+            return l.Substring(prompt.Length);
+        }
 
         private void ReplaceTextAtPrompt(string text)
         {

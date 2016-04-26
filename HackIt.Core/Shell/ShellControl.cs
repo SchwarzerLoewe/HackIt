@@ -56,8 +56,10 @@ namespace UILibrary
 			get { return shellTextBox != null ? shellTextBox.ForeColor : Color.Green; }
 			set 
 			{
-				if (shellTextBox != null)
-					shellTextBox.ForeColor = value;
+                if (shellTextBox != null)
+                {
+                    shellTextBox.ForeColor = value;
+                }
 			}
 		}
 
@@ -112,7 +114,7 @@ namespace UILibrary
 			// 
 			// shellTextBox
 			// 
-			this.shellTextBox.AcceptsReturn = true;
+			//this.shellTextBox.AcceptsReturn = true;
 			this.shellTextBox.AcceptsTab = true;
 			this.shellTextBox.BackColor = System.Drawing.Color.Black;
 			this.shellTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -121,7 +123,7 @@ namespace UILibrary
 			this.shellTextBox.Multiline = true;
 			this.shellTextBox.Name = "shellTextBox";
 			this.shellTextBox.Prompt = ">>>";
-			this.shellTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.shellTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
 			this.shellTextBox.BackColor = System.Drawing.Color.Black;
 			this.shellTextBox.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.shellTextBox.ForeColor = System.Drawing.Color.LawnGreen;

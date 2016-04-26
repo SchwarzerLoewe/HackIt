@@ -10,11 +10,12 @@ namespace HackIt.Tools.Commands
     public class GroupCommand : ITool
     {
         public string Name { get; set; } = "group";
-        public string HelpText => "group <groupname>|end|delete <groupname>";
+        public string HelpText => "group <groupname>|end";
 
         public List<Command> Commands { get; set; } = new List<Command>();
         public string GroupName { get; set; }
         public bool UseRegex { get; set; } = true;
+        public List<string> Args { get; set; } = new List<string>();
 
         public async void HandleConsole(ShellControl shell, Command cmd)
         {
@@ -47,6 +48,7 @@ namespace HackIt.Tools.Commands
                             Shell.WriteLine("Group already exists, sorry");
                             break;
                         }
+
                         mode = false;
                         shell.Prompt = "> ";
                         ConsolePage.IsRecognizing = false;

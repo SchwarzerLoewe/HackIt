@@ -30,6 +30,8 @@ namespace HackIt.Pages
         {
             var sg = ServiceLocator.Get<SavedGame>("SavedGame");
             var cmd = Command.Parse(e.Command);
+            bool found = false;
+
             if (IsRecognizing)
             {
                 GroupTool.HandleConsole(shellControl1, cmd);
@@ -47,6 +49,7 @@ namespace HackIt.Pages
                                 if (cm.Name == t.Name || t.Name == "*")
                                 {
                                     t.HandleConsole(shellControl1, cm);
+                                    found = true;
                                 }
                             }
                         }
@@ -59,10 +62,12 @@ namespace HackIt.Pages
                         if (Regex.IsMatch(cmd.Name, t.Name))
                         {
                             t.HandleConsole(shellControl1, cmd);
+                            found = true;
                         }
                         else if (t.Name.Contains("*"))
                         {
                             t.HandleConsole(shellControl1, cmd);
+                            found = true;
                         }
                     }
                     else
@@ -70,13 +75,20 @@ namespace HackIt.Pages
                         if (cmd.Name == t.Name)
                         {
                             t.HandleConsole(shellControl1, cmd);
+                            found = true;
                         }
                         else if (t.Name == "*")
                         {
                             t.HandleConsole(shellControl1, cmd);
+                            found = true;
                         }
                     }
                 }
+            }
+
+            if(!found)
+            {
+                Shell.WriteLine("Command not found. Please type 'help' for a List of Commands!");
             }
         }
 

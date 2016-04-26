@@ -18,7 +18,7 @@ namespace HackIt.Tools.Commands
             switch (cmd.Name)
             {
                 case "help":
-                    Shell.WriteLine("Here some Helps:");
+                    Shell.WriteLine("Here are some Commands");
                     foreach (var c in ConsolePage.Tools)
                     {
                         Shell.WriteLine(c.HelpText);
