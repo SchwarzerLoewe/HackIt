@@ -2,7 +2,7 @@ using System.Windows.Forms;
 
 namespace UILibrary
 {
-    internal class ShellTextBox : RichTextBox
+    internal class ShellTextBox : TextBox
     {
         private string prompt = ">>>";
         private CommandHistory commandHistory = new CommandHistory();
@@ -62,7 +62,7 @@ namespace UILibrary
             // 
             // ShellTextBox
             // 
-            //AcceptsReturn = true;
+            AcceptsReturn = true;
             AcceptsTab = true;
             BackColor = System.Drawing.Color.Black;
             BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -70,7 +70,7 @@ namespace UILibrary
             ForeColor = System.Drawing.Color.LawnGreen;
             MaxLength = 0;
             Multiline = true;
-            ScrollBars = RichTextBoxScrollBars.Both;
+            ScrollBars = ScrollBars.Both;
             Size = new System.Drawing.Size(400, 176);
             KeyDown += new System.Windows.Forms.KeyEventHandler(ShellControl_KeyDown);
             KeyPress += new System.Windows.Forms.KeyPressEventHandler(shellTextBox_KeyPress);

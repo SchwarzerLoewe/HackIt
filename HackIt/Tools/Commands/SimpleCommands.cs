@@ -8,7 +8,7 @@ namespace HackIt.Tools.Commands
 {
     public class SimpleCommands : ITool
     {
-        public string HelpText => "save\r\nload\r\necho <text in qotes>\r\ncls\r\nshutdown\r\ncolor <backcolor in hex> <forecolor in hex>";
+        public string HelpText => "save|load|echo <text in qotes>|cls|shutdown|color <backcolor in hex> <forecolor in hex>";
 
         public string Name { get; set; } = "*";
         public bool UseRegex { get; set; } = false;
@@ -21,7 +21,11 @@ namespace HackIt.Tools.Commands
                     Shell.WriteLine("Here are some Commands");
                     foreach (var c in ConsolePage.Tools)
                     {
-                        Shell.WriteLine(c.HelpText);
+                        var spl = c.HelpText.Split('|');
+                        foreach (var ht in spl)
+                        {
+                            Shell.WriteLine(ht);
+                        }
                     }
 
                     break;
