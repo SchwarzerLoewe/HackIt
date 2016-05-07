@@ -148,6 +148,10 @@
       <Project>{0effc56a-9a48-4b76-b8f6-3b0a9a68c23a}</Project>
       <Name>HackIt.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HackIt.UI\HackIt.UI.csproj">
+      <Project>{515f3f68-e081-4e43-8df4-844173dc8a5e}</Project>
+      <Name>HackIt.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="1459813469_Unlock.ico" />
