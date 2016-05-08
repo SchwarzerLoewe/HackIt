@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,17 +43,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleForm.cs" />
-    <Compile Include="Grid.cs" />
-    <Compile Include="Label.cs" />
-    <Compile Include="Labels.cs" />
-    <Compile Include="Line.cs" />
-    <Compile Include="Lines.cs" />
-    <Compile Include="Point.cs" />
+    <Compile Include="Cursor.cs" />
+    <Compile Include="Inputs\Base\IInput.cs" />
+    <Compile Include="Inputs\Base\Input.cs" />
+    <Compile Include="Inputs\Button.cs" />
+    <Compile Include="Inputs\CheckBox.cs" />
+    <Compile Include="Inputs\Dropdown\Dropdown.cs" />
+    <Compile Include="Inputs\Dropdown\DropdownItem.cs" />
+    <Compile Include="Inputs\Dropdown\DropdownSpread.cs" />
+    <Compile Include="Inputs\FileBrowser.cs" />
+    <Compile Include="Inputs\Label.cs" />
+    <Compile Include="Inputs\Menu\Menu.cs" />
+    <Compile Include="Inputs\Menu\MenuDropdown.cs" />
+    <Compile Include="Inputs\Menu\MenuItem.cs" />
+    <Compile Include="Inputs\RadioButton.cs" />
+    <Compile Include="Inputs\TextArea.cs" />
+    <Compile Include="Inputs\TextBox.cs" />
+    <Compile Include="Picture.cs" />
+    <Compile Include="ProgramInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StdConsoleObject.cs" />
-    <Compile Include="Textbox.cs" />
-    <Compile Include="Textboxes.cs" />
+    <Compile Include="WindowManager.cs" />
+    <Compile Include="Windows\Alert.cs" />
+    <Compile Include="Windows\Base\FullWindow.cs" />
+    <Compile Include="Windows\Base\IWindow.cs" />
+    <Compile Include="Windows\Base\PopupWindow.cs" />
+    <Compile Include="Windows\Base\Window.cs" />
+    <Compile Include="Windows\Confirm.cs" />
+    <Compile Include="Windows\LoadMenu.cs" />
+    <Compile Include="Windows\SaveMenu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
