@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace ConsoleBrowserObjects {
+namespace HackIt.UI {
     /// <summary>
     /// A collection class of <see cref="Label">Label</see> objects.
     /// </summary>
@@ -108,7 +108,7 @@ namespace ConsoleBrowserObjects {
                     }
 
                     // Found a Label node. Deserialize it into a new Label object.
-                    ConsoleBrowserObjects.Label      label     = new Label();
+                    HackIt.UI.Label      label     = new Label();
 
                     ((IXmlSerializable)label).ReadXml(reader);
                     _labels.Add(label);

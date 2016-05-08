@@ -2,12 +2,12 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ConsoleBrowserObjects {
+namespace HackIt.UI {
     /// <summary>
     /// An object used to manage the data necessary to render read-write
     /// objects to the screen.
     /// </summary>
-    public class Textbox : ConsoleBrowserObjects.StdConsoleObject, System.Xml.Serialization.IXmlSerializable {
+    public class Textbox : HackIt.UI.StdConsoleObject, System.Xml.Serialization.IXmlSerializable {
         #region Private Members
         private  ConsoleColor    _DEFAULT_BACKGROUND     = ConsoleColor.White;
         private  ConsoleColor    _DEFAULT_FOREGROUND     = ConsoleColor.Black;

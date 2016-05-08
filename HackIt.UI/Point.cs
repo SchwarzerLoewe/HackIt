@@ -2,7 +2,7 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ConsoleBrowserObjects {
+namespace HackIt.UI {
     /// <summary>
     /// An object to use to specify the X and Y coordinates of an object on the console
     /// screen.  A <see cref="Point">Point</see> object already exists in the framework, 

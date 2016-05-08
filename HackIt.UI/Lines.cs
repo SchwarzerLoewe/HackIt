@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace ConsoleBrowserObjects {
+namespace HackIt.UI {
 	/// <summary>
 	/// Collection class of <see cref="Line">Line</see> objects.
 	/// </summary>
@@ -85,7 +85,7 @@ namespace ConsoleBrowserObjects {
                         break;
                     }
 
-                    ConsoleBrowserObjects.Line    line   = new Line();
+                    HackIt.UI.Line    line   = new Line();
 
                     ((IXmlSerializable)line).ReadXml(reader);
                     _lines.Add(line);

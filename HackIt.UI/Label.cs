@@ -2,12 +2,12 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ConsoleBrowserObjects {
+namespace HackIt.UI {
     /// <summary>
     /// A class used to store the data necessary for a write-only
     /// object rendered on the console screen.
     /// </summary>
-    public class Label : ConsoleBrowserObjects.StdConsoleObject, 
+    public class Label : HackIt.UI.StdConsoleObject, 
                          IXmlSerializable {
         #region Private Members
         private  ConsoleColor    _DEFAULT_BACKGROUND     = ConsoleColor.Black;

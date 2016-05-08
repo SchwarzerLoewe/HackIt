@@ -2,7 +2,7 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ConsoleBrowserObjects {
+namespace HackIt.UI {
     /// <summary>
     /// Representation of a vertical or horizontal line on the console.
     /// </summary>

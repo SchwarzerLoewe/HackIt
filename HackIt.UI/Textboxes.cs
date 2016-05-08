@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace ConsoleBrowserObjects {
+namespace HackIt.UI {
     /// <summary>
     /// A collection class of <see cref="Textbox">Textbox</see> objects.
     /// </summary>
