@@ -1,5 +1,6 @@
-﻿using Calculator.Windows;
-using HackIt.UI;
+﻿using ConsoleDraw;
+using ConsoleDraw.Windows.Base;
+using HackIt.Console.Windows;
 
 namespace HackIt.Console
 {
@@ -7,11 +8,12 @@ namespace HackIt.Console
     {
         static void Main(string[] args)
         {
-            WindowManager.UpdateWindow(27, 15);
-            WindowManager.UpdateWindow(27, 15);
-            WindowManager.SetWindowTitle("Calculator");
+            WindowManager.UpdateWindow(100, 43);
 
-            new MainWindow();
+            WindowManager.SetWindowTitle("HackIt");
+
+            var lw = new LoginWindow(new FullWindow(0, 0, 100, 43, null) { BackgroundColor = System.ConsoleColor.Black });
+            lw.Show();
         }
     }
 }

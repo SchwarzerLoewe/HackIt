@@ -1,6 +1,6 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class FileBrowser : Input
     {
@@ -21,10 +21,10 @@ namespace HackIt.UI.Inputs
         public bool IncludeFiles;
         public String FilterByExtension = "*";
 
-        private ConsoleColor BackgroundColour = ConsoleColor.DarkGray;
-        private ConsoleColor TextColour = ConsoleColor.Black;
-        private ConsoleColor SelectedTextColour = ConsoleColor.White;
-        private ConsoleColor SelectedBackgroundColour = ConsoleColor.Gray;
+        private ConsoleColor BackgroundColor = ConsoleColor.DarkGray;
+        private ConsoleColor TextColor = ConsoleColor.Black;
+        private ConsoleColor SelectedTextColor = ConsoleColor.White;
+        private ConsoleColor SelectedBackgroundColor = ConsoleColor.Gray;
 
         private int cursorX;
         private int CursorX { get { return cursorX; } set { cursorX = value; GetCurrentlySelectedFileName(); SetOffset(); } }
@@ -52,16 +52,16 @@ namespace HackIt.UI.Inputs
         
         public override void Draw()
         { 
-            WindowManager.DrawColourBlock(BackgroundColour, Xpostion, Ypostion, Xpostion + Height, Ypostion + Width);
+            WindowManager.DrawColorBlock(BackgroundColor, Xpostion, Ypostion, Xpostion + Height, Ypostion + Width);
 
             if (!ShowingDrive)
             {
                 var trimedPath = CurrentPath.PadRight(Width - 2, ' ');
                 trimedPath = trimedPath.Substring(trimedPath.Count() - Width + 2, Width - 2);
-                WindowManager.WirteText(trimedPath, Xpostion, Ypostion + 1, ConsoleColor.Gray, BackgroundColour);
+                WindowManager.WriteText(trimedPath, Xpostion, Ypostion + 1, ConsoleColor.Gray, BackgroundColor);
             }
             else
-                WindowManager.WirteText("Drives", Xpostion, Ypostion + 1, ConsoleColor.Gray, BackgroundColour);
+                WindowManager.WriteText("Drives", Xpostion, Ypostion + 1, ConsoleColor.Gray, BackgroundColor);
 
             if (!ShowingDrive)
             {
@@ -72,11 +72,11 @@ namespace HackIt.UI.Inputs
 
                     if (i == CursorX)
                         if (Selected)
-                            WindowManager.WirteText(folderName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColour, SelectedBackgroundColour);
+                            WindowManager.WriteText(folderName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColor, SelectedBackgroundColor);
                         else
-                            WindowManager.WirteText(folderName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColour, BackgroundColour);
+                            WindowManager.WriteText(folderName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColor, BackgroundColor);
                     else
-                        WindowManager.WirteText(folderName, Xpostion + i - Offset + 1, Ypostion + 1, TextColour, BackgroundColour);
+                        WindowManager.WriteText(folderName, Xpostion + i - Offset + 1, Ypostion + 1, TextColor, BackgroundColor);
 
                     i++;
                 }
@@ -87,11 +87,11 @@ namespace HackIt.UI.Inputs
 
                     if (i == CursorX)
                         if (Selected)
-                            WindowManager.WirteText(fileName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColour, SelectedBackgroundColour);
+                            WindowManager.WriteText(fileName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColor, SelectedBackgroundColor);
                         else
-                            WindowManager.WirteText(fileName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColour, BackgroundColour);
+                            WindowManager.WriteText(fileName, Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColor, BackgroundColor);
                     else
-                        WindowManager.WirteText(fileName, Xpostion + i - Offset + 1, Ypostion + 1, TextColour, BackgroundColour);
+                        WindowManager.WriteText(fileName, Xpostion + i - Offset + 1, Ypostion + 1, TextColor, BackgroundColor);
                     i++;
                 }
             }
@@ -101,11 +101,11 @@ namespace HackIt.UI.Inputs
                 {
                     if (i == CursorX)
                         if (Selected)
-                            WindowManager.WirteText(Drives[i], Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColour, SelectedBackgroundColour);
+                            WindowManager.WriteText(Drives[i], Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColor, SelectedBackgroundColor);
                         else
-                            WindowManager.WirteText(Drives[i], Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColour, BackgroundColour);
+                            WindowManager.WriteText(Drives[i], Xpostion + i - Offset + 1, Ypostion + 1, SelectedTextColor, BackgroundColor);
                     else
-                        WindowManager.WirteText(Drives[i], Xpostion + i - Offset + 1, Ypostion + 1, TextColour, BackgroundColour);
+                        WindowManager.WriteText(Drives[i], Xpostion + i - Offset + 1, Ypostion + 1, TextColor, BackgroundColor);
                     
                 }
 

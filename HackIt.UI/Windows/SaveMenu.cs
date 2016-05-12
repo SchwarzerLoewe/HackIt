@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HackIt.UI.Windows.Base;
-using HackIt.UI.Inputs;
-using HackIt.UI.Windows;
+using ConsoleDraw.Windows.Base;
+using ConsoleDraw.Inputs;
+using ConsoleDraw.Windows;
 
-namespace HackIt.UI.Windows
+namespace ConsoleDraw.Windows
 {
     public class SaveMenu : PopupWindow
     {
@@ -25,7 +25,7 @@ namespace HackIt.UI.Windows
         public SaveMenu(String fileName, String path, String data, Window parentWindow)
             : base("Save Menu", 6, (Console.WindowWidth / 2) - 30, 60, 20, parentWindow)
         {
-            BackgroundColour = ConsoleColor.White;
+            BackgroundColor = ConsoleColor.White;
             Text = data;
 
             fileSelect = new FileBrowser(PostionX + 2, PostionY + 2, 56, 12, path, "fileSelect", this);

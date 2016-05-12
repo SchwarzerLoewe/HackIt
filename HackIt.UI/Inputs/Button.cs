@@ -1,21 +1,21 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class Button : Input
     {
         private String Text;
-        public ConsoleColor BackgroundColour = ConsoleColor.Gray;
-        private ConsoleColor TextColour = ConsoleColor.Black;
+        public ConsoleColor BackgroundColor = ConsoleColor.Gray;
+        private ConsoleColor TextColor = ConsoleColor.Black;
 
-        private ConsoleColor SelectedBackgroundColour = ConsoleColor.DarkGray;
-        private ConsoleColor SelectedTextColour = ConsoleColor.White;
+        private ConsoleColor SelectedBackgroundColor = ConsoleColor.DarkGray;
+        private ConsoleColor SelectedTextColor = ConsoleColor.White;
 
         private bool Selected = false;
 
@@ -24,7 +24,7 @@ namespace HackIt.UI.Inputs
         public Button(int x, int y, String text, String iD, Window parentWindow) : base(x, y, 1, text.Count() + 2, parentWindow, iD)
         {
             Text = text;
-            BackgroundColour = parentWindow.BackgroundColour;
+            BackgroundColor = parentWindow.BackgroundColor;
             Selectable = true;
         }
 
@@ -55,9 +55,9 @@ namespace HackIt.UI.Inputs
         public override void Draw()
         {
             if(Selected)
-                WindowManager.WirteText('['+Text+']', Xpostion, Ypostion, SelectedTextColour, SelectedBackgroundColour);
+                WindowManager.WriteText('['+Text+']', Xpostion, Ypostion, SelectedTextColor, SelectedBackgroundColor);
             else
-                WindowManager.WirteText('[' + Text + ']', Xpostion, Ypostion, TextColour, BackgroundColour);  
+                WindowManager.WriteText('[' + Text + ']', Xpostion, Ypostion, TextColor, BackgroundColor);  
         }
         
         public override void CursorMoveDown()

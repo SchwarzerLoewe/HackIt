@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Windows.Base
+namespace ConsoleDraw.Windows.Base
 {
     public class FullWindow : Window
     {
@@ -13,12 +13,12 @@ namespace HackIt.UI.Windows.Base
         public FullWindow(int postionX, int postionY, int width, int height, Window parentWindow)
             : base(postionX, postionY, width, height, parentWindow)
         {
-            BackgroundColour = ConsoleColor.Gray;
+            BackgroundColor = ConsoleColor.Gray;
         }
 
         public override void ReDraw()
         {
-            WindowManager.DrawColourBlock(BackgroundColour, PostionX, PostionY, PostionX + Height, PostionY + Width); //Main Box
+            WindowManager.DrawColorBlock(BackgroundColor, PostionX, PostionY, PostionX + Height, PostionY + Width); //Main Box
         }
 
     }

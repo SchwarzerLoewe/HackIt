@@ -1,20 +1,20 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class Menu : Input
     {
         private String Text = "";
-        private ConsoleColor TextColour = ConsoleColor.Black;
-        private ConsoleColor BackgroudColour = ConsoleColor.Gray;
-        private ConsoleColor SelectedTextColour = ConsoleColor.White;
-        private ConsoleColor SelectedBackgroundColour = ConsoleColor.DarkGray;
+        private ConsoleColor TextColor = ConsoleColor.Black;
+        private ConsoleColor BackgroudColor = ConsoleColor.Gray;
+        private ConsoleColor SelectedTextColor = ConsoleColor.White;
+        private ConsoleColor SelectedBackgroundColor = ConsoleColor.DarkGray;
 
         private bool Selected = false;
         public List<MenuItem> MenuItems = new List<MenuItem>();
@@ -32,9 +32,9 @@ namespace HackIt.UI.Inputs
         public override void Draw()
         {
             if (Selected)
-                WindowManager.WirteText('['+Text+']', Xpostion, Ypostion, SelectedTextColour, SelectedBackgroundColour);
+                WindowManager.WriteText('['+Text+']', Xpostion, Ypostion, SelectedTextColor, SelectedBackgroundColor);
             else
-                WindowManager.WirteText('[' + Text + ']', Xpostion, Ypostion, TextColour, BackgroudColour);
+                WindowManager.WriteText('[' + Text + ']', Xpostion, Ypostion, TextColor, BackgroudColor);
         }
 
         public override void Select()

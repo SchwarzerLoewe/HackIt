@@ -1,19 +1,18 @@
-﻿using HackIt.UI.Inputs;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Windows
+namespace ConsoleDraw.Windows
 {
     public class Alert : PopupWindow
     {
         private Button okBtn;
         private static int textLength = 46;
-
-
+        
         public Alert(String Message, Window parentWindow)
             : base("Message", 6, (Console.WindowWidth / 2) - 25, 50, 5 + (int)Math.Ceiling(((Double)Message.Count() / textLength)), parentWindow)
         {
@@ -26,18 +25,18 @@ namespace HackIt.UI.Windows
             Create(Message, parentWindow);
         }
 
-        public Alert(String Message, Window parentWindow, ConsoleColor backgroundColour)
+        public Alert(String Message, Window parentWindow, ConsoleColor BackgroundColor)
             : base("Message", 6, (Console.WindowWidth / 2) - 25, 50, 5 + (int)Math.Ceiling(((Double)Message.Count() / textLength)), parentWindow)
         {
-            BackgroundColour = backgroundColour;
+            BackgroundColor = BackgroundColor;
 
             Create(Message, parentWindow);
         }
 
-        public Alert(String Message, Window parentWindow, ConsoleColor backgroundColour, String Title)
+        public Alert(String Message, Window parentWindow, ConsoleColor BackgroundColor, String Title)
             : base(Title, 6, (Console.WindowWidth / 2) - 25, 50, 5 + (int)Math.Ceiling(((Double)Message.Count() / textLength)), parentWindow)
         {
-            BackgroundColour = backgroundColour;
+            BackgroundColor = BackgroundColor;
 
             Create(Message, parentWindow);
         }
@@ -56,7 +55,7 @@ namespace HackIt.UI.Windows
 
             /*
             var messageLabel = new Label(Message, PostionX + 2, PostionY + 2, "messageLabel", this);
-            messageLabel.BackgroundColour = BackgroundColour;*/
+            messageLabel.BackgroundColor = BackgroundColor;*/
 
             okBtn = new Button(PostionX + Height - 2, PostionY + 2, "OK", "OkBtn", this);
             okBtn.Action = delegate() { ExitWindow(); };
@@ -65,8 +64,10 @@ namespace HackIt.UI.Windows
 
             CurrentlySelected = okBtn;
 
-            Draw();
-            MainLoop();
+            //Draw();
+            //MainLoop();
         }
+
+        
     }
 }

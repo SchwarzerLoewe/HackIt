@@ -1,11 +1,13 @@
-﻿using HackIt.UI.Inputs.Base;
+﻿using ConsoleDraw.Inputs;
+using ConsoleDraw.Inputs.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+using System.Threading;
 
-namespace HackIt.UI.Windows.Base
+namespace ConsoleDraw.Windows.Base
 {
     public class Window : IWindow
     {
@@ -16,10 +18,13 @@ namespace HackIt.UI.Windows.Base
         public int PostionY { get; private set; }
         public int Width {get; private set;}
         public int Height { get; private set; }
+        public Button ApplyButton { get; set; }
 
-        public ConsoleColor BackgroundColour = ConsoleColor.Gray;
-        
+        public ConsoleColor BackgroundColor = ConsoleColor.Gray;
+
         public List<IInput> Inputs = new List<IInput>();
+        protected DialogResult DialogResult;
+
 
         public Window(int postionX, int postionY, int width, int height, Window parentWindow)
         {
@@ -41,6 +46,8 @@ namespace HackIt.UI.Windows.Base
                 foreach (var input in Inputs)
                     input.Draw();
 
+            if (ApplyButton != null) CurrentlySelected = ApplyButton;
+
                 if (CurrentlySelected != null)
                     CurrentlySelected.Select();
                // SetSelected();
@@ -50,13 +57,27 @@ namespace HackIt.UI.Windows.Base
         {
             
         }
-        
+
+        public DialogResult ShowDialog()
+        {
+            Show();
+
+            return DialogResult;
+        }
+
+        public void Show()
+        {
+            Draw();
+            MainLoop();
+        }
 
         public void MainLoop()
         {
             while (!Exit && !ProgramInfo.ExitProgram)
             {
                 var input = ReadKey();
+
+                if (CurrentlySelected == null) CurrentlySelected = this.Inputs[0];
 
                 if (input.Key == ConsoleKey.Tab)
                     CurrentlySelected.Tab();
@@ -336,7 +357,10 @@ namespace HackIt.UI.Windows.Base
 
         private void SetSelected()
         {
-            Inputs.ForEach(x => x.Unselect());
+            foreach (var item in Inputs)
+            {
+                item.Unselect();
+            }
 
             if(CurrentlySelected != null)
                 CurrentlySelected.Select();

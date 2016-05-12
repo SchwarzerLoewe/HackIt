@@ -1,19 +1,17 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class Dropdown : Input
     {
-        private ConsoleColor TextColour = ConsoleColor.Black;
-        private ConsoleColor BackgroudColour = ConsoleColor.Gray;
-        private ConsoleColor SelectedTextColour = ConsoleColor.White;
-        private ConsoleColor SelectedBackgroundColour = ConsoleColor.DarkGray;
+        public ConsoleColor TextColor = ConsoleColor.Black;
+        public ConsoleColor BackgroundColor = ConsoleColor.Gray;
+        public ConsoleColor SelectedTextColor = ConsoleColor.White;
+        public ConsoleColor SelectedBackgroundColor = ConsoleColor.DarkGray;
 
         private bool Selected = false;
         public List<DropdownItem> DropdownItems = new List<DropdownItem>();
@@ -32,7 +30,7 @@ namespace HackIt.UI.Inputs
             Options = options;
             Text = Options.First();
             Length = length;
-            BackgroudColour = parentWindow.BackgroundColour;
+            BackgroundColor = parentWindow.BackgroundColor;
 
             Selectable = true;
         }
@@ -42,9 +40,9 @@ namespace HackIt.UI.Inputs
             var paddedText = Text.PadRight(Length - 2, ' ').Substring(0, Length - 2);
 
             if (Selected)
-                WindowManager.WirteText('[' + paddedText + '▼' + ']', Xpostion, Ypostion, SelectedTextColour, SelectedBackgroundColour);
+                WindowManager.WriteText('[' + paddedText + ']', Xpostion, Ypostion, SelectedTextColor, SelectedBackgroundColor);
             else
-                WindowManager.WirteText('[' + paddedText + '▼' + ']', Xpostion, Ypostion, TextColour, BackgroudColour);
+                WindowManager.WriteText('[' + paddedText + ']', Xpostion, Ypostion, TextColor, BackgroundColor);
         }
 
         public override void Select()
@@ -69,6 +67,11 @@ namespace HackIt.UI.Inputs
             }
         }
 
-        
+        public override void Enter()
+        {
+            this.ParentWindow.MoveToNextItem();
+        }
+
+
     }
 }

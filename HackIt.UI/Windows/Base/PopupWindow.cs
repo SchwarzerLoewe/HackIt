@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Windows.Base
+namespace ConsoleDraw.Windows.Base
 {
     public class PopupWindow : Window
     {
         protected String Title;
 
-        protected ConsoleColor TitleBarColour = ConsoleColor.DarkGray;
-        protected ConsoleColor TitleColour = ConsoleColor.Black;
+        protected ConsoleColor TitleBarColor = ConsoleColor.DarkGray;
+        protected ConsoleColor TitleColor = ConsoleColor.Black;
 
         public PopupWindow(String title, int postionX, int postionY, int width, int height, Window parentWindow)
             : base(postionX, postionY, width, height, parentWindow)
@@ -21,10 +21,10 @@ namespace HackIt.UI.Windows.Base
 
         public override void ReDraw()
         {
-            WindowManager.DrawColourBlock(TitleBarColour, PostionX, PostionY, PostionX + 1, PostionY + Width); //Title Bar
-            WindowManager.WirteText(' ' + Title + ' ', PostionX, PostionY + 2, TitleColour, BackgroundColour);
+            WindowManager.DrawColorBlock(TitleBarColor, PostionX, PostionY, PostionX + 1, PostionY + Width); //Title Bar
+            WindowManager.WriteText(' ' + Title + ' ', PostionX, PostionY + 2, TitleColor, BackgroundColor);
 
-            WindowManager.DrawColourBlock(BackgroundColour, PostionX + 1, PostionY, PostionX + Height, PostionY + Width); //Main Box
+            WindowManager.DrawColorBlock(BackgroundColor, PostionX + 1, PostionY, PostionX + Height, PostionY + Width); //Main Box
         }
 
     }

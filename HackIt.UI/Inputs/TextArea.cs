@@ -1,12 +1,12 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class TextArea : Input
     {
@@ -37,8 +37,8 @@ namespace HackIt.UI.Inputs
         }
         private String TextWithoutNewLine { get { return RemoveNewLine(Text); } }
 
-        private ConsoleColor TextColour = ConsoleColor.White;
-        public ConsoleColor BackgroundColour = ConsoleColor.Blue;
+        private ConsoleColor TextColor = ConsoleColor.White;
+        public ConsoleColor BackgroundColor = ConsoleColor.Blue;
 
         private Cursor cursor = new Cursor();
 
@@ -105,21 +105,25 @@ namespace HackIt.UI.Inputs
                 return;
             }
 
-            var nextLine = splitText[CursorDisplayX + 1];
-
-            var newCursor = 0;
-            for (var i = 0; i < cursorDisplayX + 1; i++)
+            try
             {
-                newCursor += splitText[i].Count();
+                var nextLine = splitText[CursorDisplayX + 1];
+
+                var newCursor = 0;
+                for (var i = 0; i < cursorDisplayX + 1; i++)
+                {
+                    newCursor += splitText[i].Count();
+                }
+
+                if (nextLine.Count() > CursorDisplayY)
+                    newCursor += CursorDisplayY;
+                else
+                    newCursor += nextLine.Where(x => x != '\n').Count();
+
+
+                CursorPostion = newCursor;
             }
-
-            if (nextLine.Count() > CursorDisplayY)
-                newCursor += CursorDisplayY;
-            else
-                newCursor += nextLine.Where(x => x != '\n').Count();
-
-
-            CursorPostion = newCursor;
+            catch { }
 
             Draw();
         }
@@ -227,21 +231,21 @@ namespace HackIt.UI.Inputs
                 if(lines.Count > i)
                     line = ' ' + RemoveNewLine(lines[i]).PadRight(Width - 1, ' ');
 
-                WindowManager.WirteText(line, i + Xpostion - Offset, Ypostion, TextColour, BackgroundColour);
+                WindowManager.WriteText(line, i + Xpostion - Offset, Ypostion, TextColor, BackgroundColor);
             }
                
             if (Selected)
                 ShowCursor();
         
             //Draw Scroll Bar
-            WindowManager.DrawColourBlock(ConsoleColor.White, Xpostion, Ypostion + Width, Xpostion + Height, Ypostion + Width + 1);
+            WindowManager.DrawColorBlock(ConsoleColor.White, Xpostion, Ypostion + Width, Xpostion + Height, Ypostion + Width + 1);
             
             double linesPerPixel = (double)lines.Count() / (Height);
             var postion = 0;
             if(linesPerPixel > 0)
               postion = (int)Math.Floor(cursorDisplayX / linesPerPixel);
 
-            WindowManager.WirteText("■", Xpostion + postion, Ypostion + Width, ConsoleColor.DarkGray, ConsoleColor.White);
+            WindowManager.WriteText("■", Xpostion + postion, Ypostion + Width, ConsoleColor.DarkGray, ConsoleColor.White);
         }
 
         private List<String> CreateSplitText()
@@ -271,7 +275,7 @@ namespace HackIt.UI.Inputs
 
         private void ShowCursor()
         {
-            cursor.PlaceCursor(Xpostion + CursorDisplayX - Offset, Ypostion + 1 + CursorDisplayY, (Text + ' ')[CursorPostion], BackgroundColour);
+            cursor.PlaceCursor(Xpostion + CursorDisplayX - Offset, Ypostion + 1 + CursorDisplayY, (Text + ' ')[CursorPostion], BackgroundColor);
         }
 
         private void UpdateCursorDisplayPostion()

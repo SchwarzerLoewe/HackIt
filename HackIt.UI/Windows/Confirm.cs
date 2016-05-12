@@ -1,12 +1,9 @@
-﻿using HackIt.UI.Inputs;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs;
+using ConsoleDraw.Windows.Base;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace HackIt.UI.Windows
+namespace ConsoleDraw.Windows
 {
     public class Confirm : PopupWindow
     {
@@ -15,7 +12,7 @@ namespace HackIt.UI.Windows
         private Button okBtn;
         private Button cancelBtn;
 
-        public bool Result { get; private set; }
+        public DialogResult Result { get; set; }
 
         public Confirm(Window parentWindow, String Message, String Title = "Confirm")
             : base(Title, 6, (Console.WindowWidth / 2) - 25, 50, 5 + (int)Math.Ceiling(((Double)Message.Count() / textLength)), parentWindow)
@@ -23,10 +20,10 @@ namespace HackIt.UI.Windows
             Create(Message, parentWindow);
         }
 
-        public Confirm(String Message, Window parentWindow, ConsoleColor backgroundColour, String Title = "Message")
+        public Confirm(String Message, Window parentWindow, ConsoleColor BackgroundColor, String Title = "Message")
             : base(Title, 6, (Console.WindowWidth / 2) - 25, 50, 5 + (int)Math.Ceiling(((Double)Message.Count() / textLength)), parentWindow)
         {
-            BackgroundColour = backgroundColour;
+            BackgroundColor = BackgroundColor;
 
             Create(Message, parentWindow);
         }
@@ -44,20 +41,16 @@ namespace HackIt.UI.Windows
             }
 
             okBtn = new Button(PostionX + Height - 2, PostionY + 2, "OK", "OkBtn", this);
-            okBtn.Action = delegate() { Result = true; ExitWindow(); };
+            okBtn.Action = delegate() { ExitWindow(); this.DialogResult = DialogResult.OK; };
 
             cancelBtn = new Button(PostionX + Height - 2, PostionY + 8, "Cancel", "cancelBtn", this);
-            cancelBtn.Action = delegate() { ExitWindow(); };
+            cancelBtn.Action = delegate() { ExitWindow(); this.DialogResult = DialogResult.Cancel; };
 
             Inputs.Add(okBtn);
             Inputs.Add(cancelBtn);
 
             CurrentlySelected = okBtn;
-
-            Draw();
-            MainLoop();
         }
 
-        
     }
 }

@@ -1,11 +1,11 @@
-﻿using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class DropdownSpread : FullWindow
     {
@@ -31,7 +31,7 @@ namespace HackIt.UI.Inputs
 
             CurrentlySelected = DropdownItems.FirstOrDefault(x => x.Text == root.Text);
 
-            BackgroundColour = ConsoleColor.DarkGray;
+            BackgroundColor = ConsoleColor.DarkGray;
             Draw();
             MainLoop();
         }

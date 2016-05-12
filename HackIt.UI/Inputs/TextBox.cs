@@ -1,12 +1,12 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class TextBox : Input
     {
@@ -18,8 +18,8 @@ namespace HackIt.UI.Inputs
         private int Offset = 0;
         private String Text = "";
 
-        private ConsoleColor TextColour = ConsoleColor.White;
-        private ConsoleColor BackgroundColour = ConsoleColor.DarkGray;
+        private ConsoleColor TextColor = ConsoleColor.White;
+        private ConsoleColor BackgroundColor = ConsoleColor.DarkGray;
 
         private Cursor cursor = new Cursor();
 
@@ -141,7 +141,7 @@ namespace HackIt.UI.Inputs
             else
                 clippedPath = ' ' + Text.PadRight(Width, ' ').Substring(0, Width - 2);
 
-            WindowManager.WirteText(clippedPath + " ", Xpostion, Ypostion, TextColour, BackgroundColour);
+            WindowManager.WriteText(clippedPath + " ", Xpostion, Ypostion, TextColor, BackgroundColor);
             if (Selected)
                 ShowCursor();          
         }
@@ -149,7 +149,7 @@ namespace HackIt.UI.Inputs
         private void ShowCursor()
         {
             var paddedText = Text + " ";
-            cursor.PlaceCursor(Xpostion, Ypostion + CursorPostion - Offset + 1, paddedText[CursorPostion], BackgroundColour);
+            cursor.PlaceCursor(Xpostion, Ypostion + CursorPostion - Offset + 1, paddedText[CursorPostion], BackgroundColor);
         }
 
         private void RemoveCursor()

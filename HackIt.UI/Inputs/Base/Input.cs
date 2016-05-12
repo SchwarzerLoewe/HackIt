@@ -1,11 +1,11 @@
-﻿using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs.Base
+namespace ConsoleDraw.Inputs.Base
 {
     public class Input : IInput
     {

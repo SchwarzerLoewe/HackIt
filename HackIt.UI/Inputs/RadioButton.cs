@@ -1,20 +1,20 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class RadioButton : Input
     {
-        public ConsoleColor BackgroundColour = ConsoleColor.Gray;
-        private ConsoleColor TextColour = ConsoleColor.Black;
+        public ConsoleColor BackgroundColor = ConsoleColor.Gray;
+        private ConsoleColor TextColor = ConsoleColor.Black;
 
-        private ConsoleColor SelectedBackgroundColour = ConsoleColor.DarkGray;
-        private ConsoleColor SelectedTextColour = ConsoleColor.White;
+        private ConsoleColor SelectedBackgroundColor = ConsoleColor.DarkGray;
+        private ConsoleColor SelectedTextColor = ConsoleColor.White;
 
         private bool Selected = false;
         public bool Checked = false;
@@ -25,7 +25,7 @@ namespace HackIt.UI.Inputs
         public RadioButton(int x, int y, String iD, String radioGroup, Window parentWindow) : base(x, y, 1, 3, parentWindow, iD)
         {
             RadioGroup = radioGroup;
-            BackgroundColour = parentWindow.BackgroundColour;
+            BackgroundColor = parentWindow.BackgroundColor;
             Selectable = true;
         }
 
@@ -59,8 +59,7 @@ namespace HackIt.UI.Inputs
 
             Draw();
 
-            if (Action != null) //If an action has been set
-                Action();
+            Action?.Invoke();
         }
 
         public void Uncheck()
@@ -77,9 +76,9 @@ namespace HackIt.UI.Inputs
             String Char = Checked ? "■" : " ";
 
             if(Selected)
-                WindowManager.WirteText('[' + Char + ']', Xpostion, Ypostion, SelectedTextColour, SelectedBackgroundColour);
+                WindowManager.WriteText('[' + Char + ']', Xpostion, Ypostion, SelectedTextColor, SelectedBackgroundColor);
             else
-                WindowManager.WirteText('[' + Char + ']', Xpostion, Ypostion, TextColour, BackgroundColour);  
+                WindowManager.WriteText('[' + Char + ']', Xpostion, Ypostion, TextColor, BackgroundColor);  
         }
 
         public override void CursorMoveDown()

@@ -1,20 +1,20 @@
-﻿using HackIt.UI.Inputs.Base;
-using HackIt.UI.Windows.Base;
+﻿using ConsoleDraw.Inputs.Base;
+using ConsoleDraw.Windows.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI.Inputs
+namespace ConsoleDraw.Inputs
 {
     public class DropdownItem : Input
     {
         public String Text = "";
-        private ConsoleColor TextColour = ConsoleColor.White;
-        private ConsoleColor BackgroudColour = ConsoleColor.DarkGray;
-        private ConsoleColor SelectedTextColour = ConsoleColor.Black;
-        private ConsoleColor SelectedBackgroundColour = ConsoleColor.Gray;
+        private ConsoleColor TextColor = ConsoleColor.White;
+        private ConsoleColor BackgroudColor = ConsoleColor.DarkGray;
+        private ConsoleColor SelectedTextColor = ConsoleColor.Black;
+        private ConsoleColor SelectedBackgroundColor = ConsoleColor.Gray;
 
         private bool Selected = false;
         public Action Action;
@@ -31,9 +31,9 @@ namespace HackIt.UI.Inputs
             var paddedText = (Text).PadRight(Width, ' ');
 
             if (Selected)
-                WindowManager.WirteText(paddedText, Xpostion, Ypostion, SelectedTextColour, SelectedBackgroundColour);
+                WindowManager.WriteText(paddedText, Xpostion, Ypostion, SelectedTextColor, SelectedBackgroundColor);
             else
-                WindowManager.WirteText(paddedText, Xpostion, Ypostion, TextColour, BackgroudColour);
+                WindowManager.WriteText(paddedText, Xpostion, Ypostion, TextColor, BackgroudColor);
         }
 
         public override void Select()

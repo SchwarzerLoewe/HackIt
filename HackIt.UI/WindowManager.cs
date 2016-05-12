@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HackIt.UI
+namespace ConsoleDraw
 {
     public static class WindowManager
     {
-        public static void DrawColourBlock(ConsoleColor colour, int startX, int startY, int endX, int endY)
+        public static void DrawColorBlock(ConsoleColor Color, int startX, int startY, int endX, int endY)
         {
-            Console.BackgroundColor = colour;
+            Console.BackgroundColor = Color;
 
-            for (var i = startX; i < endX; i++)
+            for (var i = startX; i < endX-1; i++)
             {
                 Console.CursorLeft = startY;
                 Console.CursorTop = i;
@@ -22,13 +22,13 @@ namespace HackIt.UI
             }
         }
 
-        public static void WirteText(String text, int startX, int startY, ConsoleColor textColour, ConsoleColor backgroundColour)
+        public static void WriteText(String text, int startX, int startY, ConsoleColor textColor, ConsoleColor BackgroundColor)
         {
             Console.CursorLeft = startY;
             Console.CursorTop = startX;
 
-            Console.BackgroundColor = backgroundColour;
-            Console.ForegroundColor = textColour;
+            Console.BackgroundColor = BackgroundColor;
+            Console.ForegroundColor = textColor;
 
             Console.Write(text);
 
@@ -37,8 +37,8 @@ namespace HackIt.UI
 
         private static int startingX;
         private static int startingY;
-        private static ConsoleColor startingForegroundColour;
-        private static ConsoleColor startingBackgroundColour;
+        private static ConsoleColor startingForegroundColor;
+        private static ConsoleColor startingBackgroundColor;
         private static int startingBufferHeight;
         private static int startingBufferWidth;
 
@@ -58,8 +58,8 @@ namespace HackIt.UI
             Console.CursorVisible = false;
             startingX = Console.CursorTop;
             startingY = Console.CursorLeft;
-            startingForegroundColour = Console.ForegroundColor;
-            startingBackgroundColour = Console.BackgroundColor;
+            startingForegroundColor = Console.ForegroundColor;
+            startingBackgroundColor = Console.BackgroundColor;
 
             Console.CursorTop = 0;
             Console.CursorLeft = 0;
@@ -67,8 +67,8 @@ namespace HackIt.UI
 
         public static void EndWindow()
         {
-            Console.ForegroundColor = startingForegroundColour;
-            Console.BackgroundColor = startingBackgroundColour;
+            Console.ForegroundColor = startingForegroundColor;
+            Console.BackgroundColor = startingBackgroundColor;
 
             var whereToGet = startingX + 1; //Move one line below visible
             if (whereToGet < Console.WindowHeight) //If cursor is not on bottom line of visible
@@ -111,7 +111,7 @@ namespace HackIt.UI
             }
 
             Console.BackgroundColor = ConsoleColor.Gray;
-            WindowManager.DrawColourBlock(Console.BackgroundColor, 0, 0, Console.WindowHeight, Console.WindowWidth); //Flush Buffer
+            WindowManager.DrawColorBlock(Console.BackgroundColor, 0, 0, Console.WindowHeight, Console.WindowWidth); //Flush Buffer
         }
 
         public static void SetWindowTitle(String title)
