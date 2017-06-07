@@ -60,12 +60,13 @@
             this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.okButton.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.okButton.ForeColor = System.Drawing.Color.Black;
-            this.okButton.Location = new System.Drawing.Point(239, 111);
+            this.okButton.Location = new System.Drawing.Point(239, 100);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(78, 23);
+            this.okButton.Size = new System.Drawing.Size(78, 36);
             this.okButton.TabIndex = 3;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = false;
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // PingDialog
             // 
@@ -77,6 +78,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Name = "PingDialog";
+            this.Title = "Ping";
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.okButton, 0);

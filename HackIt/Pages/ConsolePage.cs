@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using HackIt.Tools.Dialogs;
 
 namespace HackIt.Pages
 {
@@ -95,6 +96,24 @@ namespace HackIt.Pages
         public void OnNavigate()
         {
             shellControl1.Focus();
+        }
+
+        private void downloadFileButton_Click(object sender, System.EventArgs e)
+        {
+            var dlg = new DownloadDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                //
+            }
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            var dlg = new PingDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                //
+            }
         }
     }
 }
