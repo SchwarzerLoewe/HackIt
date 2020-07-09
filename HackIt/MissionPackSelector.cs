@@ -25,7 +25,7 @@ namespace HackIt
                 mpComboBox.Items.Add(item);
             }
 
-            mpComboBox.SelectedIndex = 0;
+            //mpComboBox.SelectedIndex = 0;
         }
 
         private void mpComboBox_SelectedIndexChanged(object sender, System.EventArgs e)

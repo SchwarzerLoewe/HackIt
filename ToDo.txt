@@ -1,3 +1,7 @@
+- move to .net core
+- move to avalonia
+- replace command parser with Recursive Descent Parser
+
 Werkzeuge:
 	- Datei runterladen (Standardtool)
 	- Virus hochladen
